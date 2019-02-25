@@ -53,7 +53,7 @@ class App extends React.Component {
           <div class="row justify-content-center">
 
             <div class="col">
-              <div class="card mb-4 shadow col-12 col-md">
+              <div class="card h-100 mb-4 shadow col-12 col-md">
                 <div class="card-body">
                   <h5 class="card-title">Quiz</h5>
                   <p class="card-subtitle pb-3">
@@ -69,7 +69,7 @@ class App extends React.Component {
             </div>
 
             <div class="col">
-              <div class="card mb-4 shadow col-12 col-md">
+              <div class="card h-100 mb-4 shadow col-12 col-md">
                 <div class="card-body">
                   <h5 class="card-title">Identification</h5>
                   <p class="card-subtitle pb-3">
@@ -102,7 +102,7 @@ class App extends React.Component {
 
 
             <div class="col">
-              <div class="card mb-4 shadow col-12 col-md">
+              <div class="card h-100 mb-4 shadow col-12 col-md">
                 <div class="card-body">
                   <h5 class="card-title">About</h5>
                   <p class="card-subtitle pb-3">
