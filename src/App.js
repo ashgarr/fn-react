@@ -61,7 +61,7 @@ class App extends React.Component {
                   </p>
                   <a
                     href="https://github.com"
-                    class="btn btn-secondary"
+                    class="btn btn-primary"
                   >Start</a
                   >
                 </div>
@@ -77,7 +77,7 @@ class App extends React.Component {
                   </p>
                   <a
                     href="https://github.com"
-                    class="btn btn-secondary"
+                    class="btn btn-primary"
                   >Start</a
                   >
                 </div>
@@ -110,7 +110,7 @@ class App extends React.Component {
                   </p>
                   <a
                     href="https://github.com"
-                    class="btn btn-secondary"
+                    class="btn btn-primary"
                   >Start</a
                   >
                 </div>
