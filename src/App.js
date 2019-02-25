@@ -73,7 +73,7 @@ class App extends React.Component {
                 <div class="card-body">
                   <h5 class="card-title">Identification</h5>
                   <p class="card-subtitle pb-3">
-                    Give us the news. We'll test it for you.
+                    Give us the news. <br/> We'll test it for you.
                   </p>
                   <a
                     href="https://github.com"
