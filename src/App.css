@@ -23,8 +23,8 @@
   color: #61dafb;
 }
 
-.strong{
-  color: #61dafb;
+.Menu {
+  font-size: 0.85rem;
 }
 
 @keyframes App-logo-spin {
