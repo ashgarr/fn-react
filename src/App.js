@@ -53,11 +53,11 @@ class App extends React.Component {
           <div class="row justify-content-center">
 
             <div class="col">
-              <div class="card mb-4 shadow">
+              <div class="card mb-4 shadow col-12 col-md">
                 <div class="card-body">
                   <h5 class="card-title">Quiz</h5>
                   <p class="card-subtitle pb-3">
-                    Take the challenge. Thinking critically.
+                    See if you can spot false news in the wild.
                   </p>
                   <a
                     href="https://github.com"
@@ -69,7 +69,7 @@ class App extends React.Component {
             </div>
 
             <div class="col">
-              <div class="card mb-4 shadow">
+              <div class="card mb-4 shadow col-12 col-md">
                 <div class="card-body">
                   <h5 class="card-title">Identification</h5>
                   <p class="card-subtitle pb-3">
@@ -102,11 +102,11 @@ class App extends React.Component {
 
 
             <div class="col">
-              <div class="card mb-4 shadow">
+              <div class="card mb-4 shadow col-12 col-md">
                 <div class="card-body">
                   <h5 class="card-title">About</h5>
                   <p class="card-subtitle pb-3">
-                    Who we are and what fake news are.
+                    Learn more about us and fake news. <br/> (2 for 1!)
                   </p>
                   <a
                     href="https://github.com"
