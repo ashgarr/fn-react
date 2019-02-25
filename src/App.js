@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Button from '@material-ui/core/Button';
+import Button from 'react-bootstrap/Button';
+
 
 class App extends Component {
   constructor(props){
@@ -35,8 +36,8 @@ class App extends Component {
             Learn React
           </a>
           <Button 
-            variant="contained"
-            color="primary"
+            variant="outline-success"
+            //color="primary"
             onClick={this.handleClick}
             >
             Button
