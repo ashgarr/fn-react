@@ -8,7 +8,7 @@ class SpNav extends Component {
     render() {
         return (
             <Navbar className="shadow" collapseOnSelect expand="lg" bg="light" variant="light">
-          <Navbar.Brand href="#home" >
+          <Navbar.Brand href="/" >
             <img
               alt="logo"
               src={logo}
@@ -25,9 +25,9 @@ class SpNav extends Component {
               {/* <a href="#deets">Quiz</a>
             <a href="#deets">Verify</a>
             <a href="#deets">About</a> */}
-              <NavItem><Nav.Link href="#deets" >Quiz</Nav.Link></NavItem>
-              <NavItem><Nav.Link href="#deets">Verify</Nav.Link></NavItem>
-              <NavItem className="mr-5"><Nav.Link href="#deets">About</Nav.Link></NavItem>
+              <NavItem><Nav.Link href="/quiz" >Quiz</Nav.Link></NavItem>
+              <NavItem><Nav.Link href="/verify">Verify</Nav.Link></NavItem>
+              <NavItem className="mr-5"><Nav.Link href="/about">About</Nav.Link></NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
