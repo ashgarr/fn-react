@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import SpNav from './components/SpNav'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+//import Button from 'react-bootstrap/Button';
+//import Form from 'react-bootstrap/Form';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 
-class App extends React.Component {
+class App extends Component {
 
 
   render() {
