@@ -25,7 +25,7 @@ class Land extends Component {
                     See if you can spot false news in the wild.
                   </p>
                   <a
-                    href="https://github.com"
+                    href="/Quiz"
                     class="btn btn-primary"
                   >Start</a
                   >
