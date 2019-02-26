@@ -6,6 +6,8 @@ import SpNav from './components/SpNav'
 import Land from './views/Land.js'
 import { BrowserRouter, Route } from 'react-router-dom';
 import Quiz from './views/Quiz.js'
+import About from './views/About.js'
+import Verify from './views/Verify.js'
 
 class App extends Component {
 
@@ -21,6 +23,8 @@ class App extends Component {
 
             <Route exact path="/" component={Land} />
             <Route path="/quiz" component={Quiz} />
+            <Route path="/about" component={About} />
+            <Route path="/verify" component={Verify} />
           </div>
         </BrowserRouter>
       </div>

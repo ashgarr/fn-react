@@ -25,7 +25,7 @@ class Land extends Component {
                     See if you can spot false news in the wild.
                   </p>
                   <a
-                    href="/Quiz"
+                    href="/quiz"
                     class="btn btn-primary"
                   >Start</a
                   >
@@ -41,7 +41,7 @@ class Land extends Component {
                     Give us the news. <br/> We'll test it for you.
                   </p>
                   <a
-                    href="https://github.com"
+                    href="/verify"
                     class="btn btn-primary"
                   >Start</a
                   >
@@ -57,7 +57,7 @@ class Land extends Component {
                     Learn more about us and fake news. <br/> (2 for 1!)
                   </p>
                   <a
-                    href="https://github.com"
+                    href="/about"
                     class="btn btn-primary"
                   >Start</a
                   >
