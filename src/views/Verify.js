@@ -5,7 +5,7 @@ class Verify extends Component {
     render() {
         return(
             <div>
-                <p>contentless verify page</p>
+                <p>jingle-test ~~~~ contentless verify page</p>
             </div>
         )
     }
