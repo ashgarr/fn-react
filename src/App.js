@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import SpNav from './components/SpNav'
-//import Button from 'react-bootstrap/Button';
-//import Form from 'react-bootstrap/Form';
 import Land from './views/Land.js'
 import { BrowserRouter, Route } from 'react-router-dom';
 import Quiz from './views/Quiz.js'
 import About from './views/About.js'
 import Verify from './views/Verify.js'
+//import Button from 'react-bootstrap/Button';
+//import Form from 'react-bootstrap/Form';
 
 class App extends Component {
 
