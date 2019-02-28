@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter basename="https://famikona.github.io/fn-react">
           <div className="fillParent">
             {/* <header className="App-header"> */}
 
