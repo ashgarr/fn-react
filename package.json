@@ -12,7 +12,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5"
   },
-  "homepage": "https://jingleh.github.io/react",
+  "homepage": "https://famikona.github.io/fn-react",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
