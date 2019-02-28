@@ -9,7 +9,7 @@ class SpNav extends Component {
     render() {
         return (
             <Navbar className="shadow" collapseOnSelect expand="lg" bg="light" variant="light">
-          <Navbar.Brand href="/" >
+          <Link to="/" class="navbar-brand">
             <img
               alt="logo"
               src={logo}
@@ -17,7 +17,7 @@ class SpNav extends Component {
               class="pl-5"
 
             />
-          </Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
