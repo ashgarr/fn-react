@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import '../App.css'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 
@@ -24,10 +25,10 @@ class Land extends Component {
                   <p class="card-subtitle pb-3">
                     See if you can spot false news in the wild.
                   </p>
-                  <a
-                    href="/quiz"
+                  <Link
+                    to="/quiz"
                     class="btn btn-primary"
-                  >Start</a
+                  >Start</Link
                   >
                 </div>
               </div>
@@ -40,10 +41,10 @@ class Land extends Component {
                   <p class="card-subtitle pb-3">
                     Give us the news. <br/> We'll test it for you.
                   </p>
-                  <a
-                    href="/verify"
+                  <Link
+                    to="/verify"
                     class="btn btn-primary"
-                  >Start</a
+                  >Start</Link
                   >
                 </div>
               </div>
@@ -56,10 +57,10 @@ class Land extends Component {
                   <p class="card-subtitle pb-3">
                     Learn more about us and fake news. <br/> (2 for 1!)
                   </p>
-                  <a
-                    href="/about"
+                  <Link
+                    to="/about"
                     class="btn btn-primary"
-                  >Start</a
+                  >Start</Link
                   >
                 </div>
               </div>
