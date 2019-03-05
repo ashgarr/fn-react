@@ -1,14 +1,41 @@
 import React, { Component } from 'react'
 import '../App.css'
 import form from "react-bootstrap/Form"
+//import { func } from 'prop-types';
 
 class Verify extends Component {
+    // constructor(){
+    //     this.state = {
+    //         alertIsHidden: false,
+    //         firstBox: ""
+    //     }
+
+    //     function check() {
+    //         if (document.getElementById("link") === "TEST VALID") {
+    //             this.fakealert();
+    //         } else {
+    //             this.safealert();
+    //         }
+    //     }
+        
+    //     function fakealert() {
+
+    //     }
+        
+    //     function safealert() {
+        
+    //     }
+    // }
+
     render() {
         return (
             <div>
+                <div hidden id="red-alert">
+                    Alert!
+                </div>
                 <form>
                     Link of the news:<br />
-                    <input type="text" name="link" />
+                    <input type="text" id="link" name="link" />
                     <br />
                     Author of the news:<br />
                     <input type="text" name="author" />
