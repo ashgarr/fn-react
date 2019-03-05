@@ -6,7 +6,6 @@ class Verify extends Component {
     render() {
         return (
             <div>
-                <p>contentless verify page</p>
                 <form>
                     Link of the news:<br />
                     <input type="text" name="link" />
