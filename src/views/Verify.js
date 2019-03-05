@@ -4,28 +4,22 @@ import form from "react-bootstrap/Form"
 //import { func } from 'prop-types';
 
 class Verify extends Component {
-    // constructor(){
-    //     this.state = {
-    //         alertIsHidden: false,
-    //         firstBox: ""
-    //     }
 
-    //     function check() {
-    //         if (document.getElementById("link") === "TEST VALID") {
-    //             this.fakealert();
-    //         } else {
-    //             this.safealert();
-    //         }
-    //     }
-        
-    //     function fakealert() {
+    check = () => {
+        if (document.getElementById("link") === "TEST VALID") {
+            this.fakealert();
+        } else {
+            this.safealert();
+        }
+    }
+    
+    fakealert = () => {
 
-    //     }
-        
-    //     function safealert() {
-        
-    //     }
-    // }
+    }
+    
+    safealert = () => {
+    
+    }
 
     render() {
         return (
