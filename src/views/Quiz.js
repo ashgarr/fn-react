@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css'
 
-import progressbar from 'react-bootstrap/ProgressBar'
-
 class Quiz extends Component {
     render() {
         return (
