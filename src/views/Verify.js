@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import '../App.css'
-import form from "react-bootstrap/Form"
 //import { func } from 'prop-types';
 
 class Verify extends Component {
@@ -14,11 +13,11 @@ class Verify extends Component {
     }
     
     fakealert = () => {
-
+        document.getElementById("red-alert").hidden = false;
     }
     
     safealert = () => {
-    
+        document.getElementById("red-alert").hidden = false;
     }
 
     render() {
@@ -27,7 +26,7 @@ class Verify extends Component {
                 <div hidden id="red-alert">
                     Alert!
                 </div>
-                <form>
+                <div>
                     Link of the news:<br />
                     <input type="text" id="link" name="link" />
                     <br />
@@ -40,8 +39,8 @@ class Verify extends Component {
                     Content of the news:<br />
                     <input type="text" name="content" />
                     <br />
-                    <button class="mt-4 btn btn-warning">quick check</button>
-                </form>
+                    <button class="mt-4 btn btn-warning" onClick="check()">quick check</button>
+                </div>
             </div>
         )
     }
