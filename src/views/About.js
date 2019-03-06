@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../App.css'
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import Hint from '../components/Hint'
 
 class About extends Component {
     render() {
@@ -13,7 +14,6 @@ class About extends Component {
                         <footer class="blockquote-footer">Voltaire in <cite title="Source Title">Letter to Charles-Augustin Ferriol, August 28, 1760</cite></footer>
                     </blockquote>
                 </Jumbotron>
-
                 <div class="ml-5 text-left">
                     <br />
                     <h5>
@@ -46,7 +46,7 @@ class About extends Component {
                         We want to stop fake news!
                 </p>
                 </div>
-
+                {/* <Hint /> */}
 
 
 

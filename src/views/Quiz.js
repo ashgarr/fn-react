@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css'
+import Hint from '../components/Hint'
 
 class Quiz extends Component {
     render() {
@@ -47,11 +48,11 @@ class Quiz extends Component {
 
 
                         <div class="col-2">
-                            <button
-                                onClick=""
+                            {/* <button
                                 class="btn btn-outline-info btn-sm"
                             >Hint</button
-                            >
+                            > */}
+                            <Hint />
                         </div>
 
                     </div>

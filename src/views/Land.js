@@ -4,6 +4,7 @@ import '../App.css'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 
 class Land extends Component {
+  
     render() {
         return(
             <div>
