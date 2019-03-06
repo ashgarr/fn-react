@@ -17,15 +17,39 @@ class About extends Component {
                 <div class="ml-5 text-left">
                     <br />
                     <h5>
-                        What Are Fake News?
+                        <u>What Are Fake News?</u>
                     </h5>
-                    <div class="card">
 
-                    </div>
+
                     <p>
-                        While there are various definitions of fake news,
+                        While there are various definitions of fake news, lorem ipsum!
                             </p>
+                    <br />
                 </div>
+                <div class="ml-5 text-left">
+                    <h5>
+                        <u>How to Spot Them?</u>
+                    </h5>
+
+                    <p>
+                        Here we will provide you a couple useful tips. Remember to practice them in our quiz page!
+                    </p>
+                    <br />
+                </div>
+
+                <div class="ml-5 text-left">
+                    <h5>
+                        <u>About this Website</u>
+                    </h5>
+
+                    <p>
+                        We want to stop fake news!
+                </p>
+                </div>
+
+
+
+
 
 
 
