@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import '../App.css'
 import Hint from '../components/Hint'
+import ProgressBar from 'react-bootstrap/ProgressBar'
 
 class Quiz extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-          progress: 0
+            progress: 1
         }
-      }
+    }
     render() {
         return (
             <div>
@@ -16,11 +17,10 @@ class Quiz extends Component {
                     <div className="row">
 
                         <div className="col-2">
-
-                            <p>5 / 10</p>
-                            <div className="progress">
-                                <div className="progress-bar w-50" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <ProgressBar now={this.state.progress*10} />
+                            <p>
+                                {this.state.progress} / 10
+                            </p>
                         </div>
 
                         <div className="col-8">
@@ -44,7 +44,7 @@ class Quiz extends Component {
                                     >
                                     <button
                                         className="btn btn-danger ml-5"
-                                        onClick = {() => {
+                                        onClick={() => {
                                             console.log(this.state.progress);
                                             this.setState({
                                                 progress: this.state.progress + 1
