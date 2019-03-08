@@ -2,25 +2,28 @@ import React, { Component } from 'react'
 import '../App.css'
 import Hint from '../components/Hint'
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import VerticallyCenteredModal from '../components/VerticallyCenteredModal';
 
 class Quiz extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            progress: 1
+            progress: 1,
+            modalShow: true
         }
     }
     render() {
+        let modalClose = () => this.setState({ modalShow: false });
         return (
             <div>
                 <div className="container pt-4">
                     <div className="row">
 
                         <div className="col-2">
-                            <ProgressBar now={this.state.progress*10} />
                             <p>
                                 {this.state.progress} / 10
                             </p>
+                            <ProgressBar now={this.state.progress * 10} />
                         </div>
 
                         <div className="col-8">
@@ -32,7 +35,6 @@ class Quiz extends Component {
                                     </h6>
                                     <p className="card-text pt-2">
                                         <small>
-                                            Email HEALTHCARE REFORM TO MAKE AMERICA GREAT AGAIN
         Since March of 2010, the American people have had to suffer under the incredible economic burden of the Affordable Care Act Obamacare. This legislation, passed by totally partisan votes in the House and Senate and signed into law by the most divisive and partisan President in American history, has tragically but predictably resulted in runaway costs, websites that don't work, greater rationing of care, higher premiums, less competition and fewer choices. Obamacare has raised the economic uncertainty of every single person residing in this country. As it appears Obamacare is certain to collapse of its own weight, the damage done by the Democrats and President Obama, and abetted by the Supreme Court, will be difficult to repair unless the next President and a Republican congress lead the effort to bring much-needed free market reforms to the healthcare industry.
                                         </small>
                                     </p>
@@ -60,13 +62,12 @@ class Quiz extends Component {
 
 
                         <div className="col-2">
-                            {/* <button
-                                class="btn btn-outline-info btn-sm"
-                            >Hint</button
-                            > */}
                             <Hint />
                         </div>
-
+                        <VerticallyCenteredModal
+                            show={this.state.modalShow}
+                            onHide={modalClose}
+                        />
                     </div>
                 </div>
             </div>
