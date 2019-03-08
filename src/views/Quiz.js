@@ -1,8 +1,48 @@
 import React, { Component } from 'react'
 import '../App.css'
-import Hint from '../components/Hint'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import VerticallyCenteredModal from '../components/VerticallyCenteredModal';
+import Button from 'react-bootstrap/Button'
+import QuizCard1 from '../components/QuizCard1';
+import QuizCard2 from '../components/QuizCard2';
+import Hint1 from '../components/Hint1';
+import Hint2 from '../components/Hint2';
+import Answer1 from '../components/Answer1';
+import Answer2 from '../components/Answer2'
+
+
+function ShowCard(props) {
+    if (props.number == "1") {
+        return <QuizCard1 />;
+    }
+    if (props.number == "0") {
+        return <QuizCard2 />;
+    }
+}
+
+function ShowHint(props) {
+    if (props.number == "1") {
+        return <Hint1 />;
+    }
+    if (props.number == "0") {
+        return <Hint2 />;
+    }
+}
+
+function ShowAnswer(props){
+
+    if(props == "1"){
+        return (
+            <Answer1 />
+        )
+    }
+
+    if(props == "0"){
+        return (
+            <Answer2 />
+        )
+    }
+}
 
 class Quiz extends Component {
     constructor(props) {
@@ -14,6 +54,7 @@ class Quiz extends Component {
     }
     render() {
         let modalClose = () => this.setState({ modalShow: false });
+        let qnum = this.state.progress % 2;
         return (
             <div>
                 <div className="container pt-4">
@@ -27,42 +68,38 @@ class Quiz extends Component {
                         </div>
 
                         <div className="col-8">
-                            <div className="card text-left h-100 mb-1 pb-1 shadow animated bounceInRight">
-                                <div className="card-body">
-                                    <h5 className="card-title">FANTASTIC! TRUMP'S 7 POINT PLAN To Reform Healthcare Begins With A Bombshell!</h5>
-                                    <h6 className="card-subtitle font-weight-normal text-muted">
-                                        100percentfedup.com
-                                    </h6>
-                                    <p className="card-text pt-2">
-                                        <small>
-        Since March of 2010, the American people have had to suffer under the incredible economic burden of the Affordable Care Act Obamacare. This legislation, passed by totally partisan votes in the House and Senate and signed into law by the most divisive and partisan President in American history, has tragically but predictably resulted in runaway costs, websites that don't work, greater rationing of care, higher premiums, less competition and fewer choices. Obamacare has raised the economic uncertainty of every single person residing in this country. As it appears Obamacare is certain to collapse of its own weight, the damage done by the Democrats and President Obama, and abetted by the Supreme Court, will be difficult to repair unless the next President and a Republican congress lead the effort to bring much-needed free market reforms to the healthcare industry.
-                                        </small>
-                                    </p>
-                                </div>
+
+                            <ShowCard number={qnum} />
+
                                 <div className="card-body align-self-center">
-                                    <button
+                                    <Button
                                         className="btn btn-primary mr-5"
-                                    >REAL</button
-                                    >
-                                    <button
-                                        className="btn btn-danger ml-5"
                                         onClick={() => {
-                                            console.log(this.state.progress);
                                             this.setState({
                                                 progress: this.state.progress + 1
                                             })
                                         }}
-                                    >FAKE</button
+                                    >REAL</Button
+                                    >
+                                    <Button
+                                        className="btn btn-danger ml-5"
+                                        onClick={() => {
+                                            ShowAnswer(qnum);
+
+
+                                            this.setState({
+                                                progress: this.state.progress + 1
+                                            })
+                                        }}
+                                    >FAKE</Button
                                     >
                                 </div>
-                            </div>
-
-
                         </div>
 
-
                         <div className="col-2">
-                            <Hint />
+                            
+                            <ShowHint number={qnum} />
+
                         </div>
                         <VerticallyCenteredModal
                             show={this.state.modalShow}

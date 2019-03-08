@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 
 class VerticallyCenteredModal extends Component {
     render() {
@@ -14,11 +13,10 @@ class VerticallyCenteredModal extends Component {
         >
           <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
-              
+            A Quick Instruction
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>A Quick Instruction</h4>
             <p>
               Welcome to taking the Fake News Identification Challenge! <br />
               You'll be given <strong>10</strong> pieces of news.
@@ -37,27 +35,4 @@ class VerticallyCenteredModal extends Component {
       );
     }
   }
-  
-  class App extends React.Component {
-    render() {
-      let modalClose = () => this.setState({ modalShow: false });
-  
-      return (
-        <ButtonToolbar>
-          <Button
-            variant="primary"
-            onClick={() => this.setState({ modalShow: true })}
-          >
-            Launch vertically centered modal
-          </Button>
-  
-          <VerticallyCenteredModal
-            show={this.state.modalShow}
-            onHide={modalClose}
-          />
-        </ButtonToolbar>
-      );
-    }
-  }
-
   export default VerticallyCenteredModal

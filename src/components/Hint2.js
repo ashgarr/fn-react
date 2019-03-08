@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button'
 import Overlay from 'react-bootstrap/Overlay'
 
-class Hint extends Component {
+class Hint2 extends Component {
 
   constructor(...args) {
     super(...args);
@@ -38,9 +38,9 @@ class Hint extends Component {
                 ...props.style,
               }}
             >
-              Pay attention to
+              Think about the
               <br />
-               the use of language
+               reasoning process
             </div>
           )}
         </Overlay>
@@ -49,4 +49,4 @@ class Hint extends Component {
   }
 
 }
-export default Hint
+export default Hint2
