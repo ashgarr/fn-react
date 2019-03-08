@@ -39,7 +39,7 @@ class Verify extends Component {
                     Content of the news:<br />
                     <input type="text" name="content" />
                     <br />
-                    <button class="mt-4 btn btn-warning" onClick="check()">quick check</button>
+                    <button className="mt-4 btn btn-warning" onClick="check()">quick check</button>
                 </div>
             </div>
         )

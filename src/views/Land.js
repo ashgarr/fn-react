@@ -16,51 +16,51 @@ class Land extends Component {
 
         </Jumbotron>
 
-        <div class="container pt-4">
-          <div class="row justify-content-center">
+        <div className="container pt-4">
+          <div className="row justify-content-center">
 
-            <div class="col">
-              <div class="card h-100 mb-4 shadow col-12 col-md">
-                <div class="card-body">
-                  <h5 class="card-title">Quiz</h5>
-                  <p class="card-subtitle pb-3">
+            <div className="col">
+              <div className="card h-100 mb-4 shadow col-12 col-md">
+                <div className="card-body">
+                  <h5 className="card-title">Quiz</h5>
+                  <p className="card-subtitle pb-3">
                     See if you can spot false news in the wild.
                   </p>
                   <Link
                     to="/quiz"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                   >Start</Link
                   >
                 </div>
               </div>
             </div>
 
-            <div class="col">
-              <div class="card h-100 mb-4 shadow col-12 col-md">
-                <div class="card-body">
-                  <h5 class="card-title">Identification</h5>
-                  <p class="card-subtitle pb-3">
+            <div className="col">
+              <div className="card h-100 mb-4 shadow col-12 col-md">
+                <div className="card-body">
+                  <h5 className="card-title">Identification</h5>
+                  <p className="card-subtitle pb-3">
                     Give us the news. <br/> We'll test it for you.
                   </p>
                   <Link
                     to="/verify"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                   >Start</Link
                   >
                 </div>
               </div>
             </div>
 
-            <div class="col">
-              <div class="card h-100 mb-4 shadow col-12 col-md">
-                <div class="card-body">
-                  <h5 class="card-title">About</h5>
-                  <p class="card-subtitle pb-3">
+            <div className="col">
+              <div className="card h-100 mb-4 shadow col-12 col-md">
+                <div className="card-body">
+                  <h5 className="card-title">About</h5>
+                  <p className="card-subtitle pb-3">
                     Learn more about us and fake news. <br/> (2 for 1!)
                   </p>
                   <Link
                     to="/about"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                   >Start</Link
                   >
                 </div>

@@ -25,13 +25,14 @@ class Hint extends Component {
         >
           Hint
         </Button>
-        <Overlay target={target} show={show} placement="down">
+        <Overlay target={target} show={show} placement="bottom">
           {({ placement, scheduleUpdate, arrowProps, ...props }) => (
             <div
               {...props}
               style={{
                 backgroundColor: 'rgba(100, 100, 100, 0.85)',
                 padding: '4px 15px',
+                margin: '0.5em 0 0 0',
                 color: 'white',
                 borderRadius: 3,
                 ...props.style,

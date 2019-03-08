@@ -6,6 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Quiz from './views/Quiz.js'
 import About from './views/About.js'
 import Verify from './views/Verify.js'
+import './animate.css'
 //import Button from 'react-bootstrap/Button';
 //import Form from 'react-bootstrap/Form';
 
