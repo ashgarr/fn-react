@@ -23,7 +23,7 @@ class VerticallyCenteredModal extends Component {
               Following your intention, claim each of them to be 
               <span className='text-primary'><strong> REAL </strong></span>
               or <span className='text-danger'><strong> FAKE</strong></span>. <br />
-              We will tell you the right answer and how to get it once you finish each step. <br />
+              We will tell you the right answer and why once you finish each step. <br />
               At the end, we'll give you a summary and learning takeaway! <br />
               <small>(If you need a hint during the process, look at the top right corner!)</small>
             </p>

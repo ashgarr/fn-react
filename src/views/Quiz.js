@@ -84,7 +84,7 @@ class Quiz extends Component {
                                     <Button
                                         className="btn btn-danger ml-5"
                                         onClick={() => {
-                                            ShowAnswer(qnum);
+                                            // ShowAnswer(qnum);
 
 
                                             this.setState({
