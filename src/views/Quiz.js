@@ -7,8 +7,6 @@ import QuizCard1 from '../components/QuizCard1';
 import QuizCard2 from '../components/QuizCard2';
 import Hint1 from '../components/Hint1';
 import Hint2 from '../components/Hint2';
-import Answer1 from '../components/Answer1';
-import Answer2 from '../components/Answer2'
 
 
 function ShowCard(props) {
@@ -26,21 +24,6 @@ function ShowHint(props) {
     }
     if (props.number == "0") {
         return <Hint2 />;
-    }
-}
-
-function ShowAnswer(props){
-
-    if(props == "1"){
-        return (
-            <Answer1 />
-        )
-    }
-
-    if(props == "0"){
-        return (
-            <Answer2 />
-        )
     }
 }
 
@@ -84,7 +67,6 @@ class Quiz extends Component {
                                     <Button
                                         className="btn btn-danger ml-5"
                                         onClick={() => {
-                                            // ShowAnswer(qnum);
 
 
                                             this.setState({
