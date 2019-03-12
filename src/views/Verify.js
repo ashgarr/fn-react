@@ -1,34 +1,39 @@
 import React, { Component } from 'react'
 import '../App.css'
+import Alert from '../components/Alert'
 //import { func } from 'prop-types';
 
 class Verify extends Component {
 
-    check = () => {
-        if (document.getElementById("link") === "TEST VALID") {
-            this.fakealert();
-        } else {
-            this.safealert();
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            alert: false,
+            link: ''
         }
     }
-    
-    fakealert = () => {
-        document.getElementById("red-alert").hidden = false;
+
+    alertSwap = (s) => {
+        if (s === 'TEST VALUE') {
+            this.setState({alert: true})
+        } else {
+            this.setState({alert: false})
+        }
     }
-    
-    safealert = () => {
-        document.getElementById("red-alert").hidden = false;
+
+    handleEdit = (e) => {
+        this.setState({link: e.target.value});
+        this.alertSwap(e.target.value)
     }
 
     render() {
         return (
             <div>
-                <div hidden id="red-alert">
-                    Alert!
-                </div>
+                { this.state.alert && <Alert /> }
                 <div>
                     Link of the news:<br />
-                    <input type="text" id="link" name="link" />
+                    <input type="text" id="link" name="link" value={this.state.link} onChange={this.handleEdit}/>
                     <br />
                     Author of the news:<br />
                     <input type="text" name="author" />
@@ -39,7 +44,7 @@ class Verify extends Component {
                     Content of the news:<br />
                     <input type="text" name="content" />
                     <br />
-                    <button className="mt-4 btn btn-warning" onClick="check()">quick check</button>
+                    <button className="mt-4 btn btn-warning">quick check</button>
                 </div>
             </div>
         )
