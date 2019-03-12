@@ -10,12 +10,15 @@ class Verify extends Component {
 
         this.state = {
             alert: false,
-            link: ''
+            link: '',
+            author: '',
+            title: '',
+            content: ''
         }
     }
 
-    alertSwap = (s) => {
-        if (s === 'TEST VALUE') {
+    alertSwap = () => {
+        if (this.state.link === 'TEST VALUE') {
             this.setState({alert: true})
         } else {
             this.setState({alert: false})
@@ -24,7 +27,18 @@ class Verify extends Component {
 
     handleLinkEdit = (e) => {
         this.setState({link: e.target.value});
-        this.alertSwap(e.target.value)
+    }
+
+    handleAuthorEdit = (e) => {
+        this.setState({author: e.target.value});
+    }
+
+    handleTitleEdit = (e) => {
+        this.setState({title: e.target.value});
+    }
+
+    handleContentEdit = (e) => {
+        this.setState({content: e.target.value});
     }
 
     render() {
@@ -36,15 +50,15 @@ class Verify extends Component {
                     <input type="text" id="link" name="link" value={this.state.link} onChange={this.handleLinkEdit}/>
                     <br />
                     Author of the news:<br />
-                    <input type="text" name="author" />
+                    <input type="text" name="author" value={this.state.author} onChange={this.handleAuthorEdit} />
                     <br />
                     Title of the news:<br />
-                    <input type="text" name="title" />
+                    <input type="text" name="title" value={this.state.title} onChange={this.handleAuthorEdit} />
                     <br />
                     Content of the news:<br />
-                    <input type="text" name="content" />
+                    <input type="text" name="content" value={this.state.content} onChange={this.handleContentEdit} />
                     <br />
-                    <button className="mt-4 btn btn-warning">quick check</button>
+                    <button className="mt-4 btn btn-warning" onClick={this.alertSwap} >quick check</button>
                 </div>
             </div>
         )
