@@ -22,7 +22,7 @@ class Verify extends Component {
         }
     }
 
-    handleEdit = (e) => {
+    handleLinkEdit = (e) => {
         this.setState({link: e.target.value});
         this.alertSwap(e.target.value)
     }
@@ -33,7 +33,7 @@ class Verify extends Component {
                 { this.state.alert && <Alert /> }
                 <div>
                     Link of the news:<br />
-                    <input type="text" id="link" name="link" value={this.state.link} onChange={this.handleEdit}/>
+                    <input type="text" id="link" name="link" value={this.state.link} onChange={this.handleLinkEdit}/>
                     <br />
                     Author of the news:<br />
                     <input type="text" name="author" />
