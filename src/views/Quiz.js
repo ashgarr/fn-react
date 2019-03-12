@@ -8,7 +8,8 @@ import QuizCard2 from '../components/QuizCard2';
 import Hint1 from '../components/Hint1';
 import Hint2 from '../components/Hint2';
 
-let answerArray = [null, null]
+let answerArray = [null, null];
+const numOfQuestions = 3;
 
 class ResultCard extends Component {
     render(){
@@ -41,7 +42,7 @@ function ShowCard(props) {
     if (props.number == "2") {
         return <QuizCard2 />;
     }
-    if (props.number == "3") {
+    if (props.number == numOfQuestions) {
         return <ResultCard />;
     }
 }
@@ -53,7 +54,7 @@ function ShowHint(props) {
     if (props.number == "2") {
         return <Hint2 />;
     }
-    if (props.number == "3") {
+    if (props.number == numOfQuestions) {
         return <> </>;
     }
 }
@@ -78,9 +79,9 @@ class Quiz extends Component {
 
                         <div className="col-2">
                             <p>
-                                {this.state.progress} / 10
+                                {this.state.progress} / {numOfQuestions}
                             </p>
-                            <ProgressBar now={this.state.progress * 10} />
+                            <ProgressBar now={this.state.progress * 100 / numOfQuestions} />
                         </div>
 
                         <div className="col-8">
