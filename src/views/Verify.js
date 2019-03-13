@@ -18,12 +18,22 @@ class Verify extends Component {
     }
 
     alertSwap = () => {
-        if (this.state.link === 'TEST VALUE') {
+        if (this.state.link !== '') {
             this.setState({alert: true})
         } else {
             this.setState({alert: false})
         }
     }
+
+    go = () => {
+        // loader/click blocker
+        // database search
+        // alert builder
+        // alert
+        this.alertSwap();
+    }
+
+    // Form edit handlers
 
     handleLinkEdit = (e) => {
         this.setState({link: e.target.value});
@@ -58,7 +68,7 @@ class Verify extends Component {
                     Content of the news:<br />
                     <input type="text" name="content" value={this.state.content} onChange={this.handleContentEdit} />
                     <br />
-                    <button className="mt-4 btn btn-warning" onClick={this.alertSwap} >quick check</button>
+                    <button className="mt-4 btn btn-warning" onClick={this.go} >quick check</button>
                 </div>
             </div>
         )
