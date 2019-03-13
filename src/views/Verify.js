@@ -10,6 +10,8 @@ class Verify extends Component {
 
         this.state = {
             alert: false,
+            blockButton: false,
+            alertText: '',
             link: '',
             author: '',
             title: '',
@@ -17,20 +19,70 @@ class Verify extends Component {
         }
     }
 
-    alertSwap = () => {
-        if (this.state.link !== '') {
-            this.setState({alert: true})
+    alertSwap = (message) => {
+        if (this.message !== '') {
+            this.setState({alertText: message});
         } else {
-            this.setState({alert: false})
+            this.setState({alertText: 'Alert'})
+        }
+        if (this.state.link !== '') {
+            this.setState({alert: true});
+        } else {
+            this.setState({alert: false});
         }
     }
 
     go = () => {
         // loader/click blocker
+        this.loader();
         // database search
+        this.searcher();
         // alert builder
+        var t = this.alertStruct();
         // alert
-        this.alertSwap();
+        this.alertSwap(t);
+        this.unlock();
+    }
+
+    loader = () => {
+        this.setState({blockButton: true});
+        // add spinner here
+    }
+
+    searcher = () => {
+        // will rig up to csv
+    }
+
+    alertStruct = (site, author, title, content, count, type) => {
+        if (this.count !== 0) {
+            this.message = 'Flags have been raised on the '
+            
+            if (site) {
+                this.message = this.message + 'site '
+            }
+
+            if (author) {
+                this.message = this.message + 'author '
+            }
+
+            if (title) {
+                this.message = this.message + 'title '
+            }
+
+            if (content) {
+                this.message = this.message + 'content '
+            }
+
+            this.message = this.message + '. Use caution with this article.'
+        } else {
+            this.message = 'this doesn\'t appear in our system, and should be fine.'
+        }
+
+        return this.message;
+    }
+
+    unlock = () => {
+        this.setState({blockButton: false});
     }
 
     // Form edit handlers
@@ -68,7 +120,7 @@ class Verify extends Component {
                     Content of the news:<br />
                     <input type="text" name="content" value={this.state.content} onChange={this.handleContentEdit} />
                     <br />
-                    <button className="mt-4 btn btn-warning" onClick={this.go} >quick check</button>
+                    <button className="mt-4 btn btn-warning" onClick={this.go} disabled={this.state.blockButton}>quick check</button>
                 </div>
             </div>
         )
