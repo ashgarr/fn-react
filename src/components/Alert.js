@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 class Alert extends Component {
+
     render() {
         return (
             <div id="red-alert">
-                Alert!
+                {this.props.alertText}
             </div>
         )
     }

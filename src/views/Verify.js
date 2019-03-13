@@ -106,7 +106,7 @@ class Verify extends Component {
     render() {
         return (
             <div>
-                { this.state.alert && <Alert /> }
+                { this.state.alert && <Alert alertText={this.state.alertText}/> }
                 <div>
                     Link of the news:<br />
                     <input type="text" id="link" name="link" value={this.state.link} onChange={this.handleLinkEdit}/>
