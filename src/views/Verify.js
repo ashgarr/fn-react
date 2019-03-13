@@ -53,8 +53,8 @@ class Verify extends Component {
         // will rig up to csv
     }
 
-    alertStruct = (site, author, title, content, count, type) => {
-        if (this.count !== 0) {
+    alertStruct = (count = 0, site, author, title, content, type) => {
+        if (count !== 0) { // changing this.count to count fixes this line; need to double check why
             this.message = 'Flags have been raised on the '
             
             if (site) {
@@ -102,6 +102,8 @@ class Verify extends Component {
     handleContentEdit = (e) => {
         this.setState({content: e.target.value});
     }
+
+    // PAGE CONTENT
 
     render() {
         return (
