@@ -36,9 +36,8 @@ class Verify extends Component {
         // loader/click blocker
         this.loader();
         // database search
-        this.searcher();
-        // alert builder
-        var t = this.alertStruct();
+        //var t = this.searcher();
+        var t = this.noCsvSearcher();
         // alert
         this.alertSwap(t);
         this.unlock();
@@ -51,31 +50,70 @@ class Verify extends Component {
 
     searcher = () => {
         // will rig up to csv
+        var count = 0;
+        var site = false;
+        var author = false;
+        var title = false;
+        var content = false;
+        var type = 0 // 0: none 1: bias 2: lie
+
+        return this.alertStruct(count, site, author, title, content, type);
     }
 
-    alertStruct = (count = 0, site, author, title, content, type) => {
+    noCsvSearcher = () => {
+        var count = 0;
+        var site = false;
+        var author = false;
+        var title = false;
+        var content = false;
+        var type = 0 // 0: none 1: bias 2: lie
+
+        if (this.state.link === "yeet.com") {
+            site = true;
+            count++;
+        }
+
+        if (this.state.author === "Ben Shapiro") {
+            author = true;
+            count++;
+        }
+
+        if (this.state.title === "TEST") {
+            title = true;
+            count++;
+        }
+
+        if (this.state.content === "liez") {
+            content = true;
+            count++;
+        }
+
+        return this.alertStruct(count, site, author, title, content, type);
+    }
+
+    alertStruct = (count, site, author, title, content, type) => {
         if (count !== 0) { // changing this.count to count fixes this line; need to double check why
             this.message = 'Flags have been raised on the '
             
             if (site) {
-                this.message = this.message + 'site '
+                this.message = this.message + ', site'
             }
 
             if (author) {
-                this.message = this.message + 'author '
+                this.message = this.message + ', author'
             }
 
             if (title) {
-                this.message = this.message + 'title '
+                this.message = this.message + ', title'
             }
 
             if (content) {
-                this.message = this.message + 'content '
+                this.message = this.message + ', content'
             }
 
             this.message = this.message + '. Use caution with this article.'
         } else {
-            this.message = 'this doesn\'t appear in our system, and should be fine.'
+            this.message = 'This article doesn\'t appear in our system, and should be safe to use.'
         }
 
         return this.message;
