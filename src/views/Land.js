@@ -20,7 +20,7 @@ class Land extends Component {
           <div className="row justify-content-center">
 
             <div className="col">
-              <div className="card h-100 mb-4 shadow col-12 col-md">
+              <div className="card mb-4 shadow col-12 col-md">
                 <div className="card-body">
                   <h5 className="card-title">Quiz</h5>
                   <p className="card-subtitle pb-3">
@@ -36,7 +36,7 @@ class Land extends Component {
             </div>
 
             <div className="col">
-              <div className="card h-100 mb-4 shadow col-12 col-md">
+              <div className="card mb-4 shadow col-12 col-md">
                 <div className="card-body">
                   <h5 className="card-title">Identification</h5>
                   <p className="card-subtitle pb-3">
@@ -52,7 +52,7 @@ class Land extends Component {
             </div>
 
             <div className="col">
-              <div className="card h-100 mb-4 shadow col-12 col-md">
+              <div className="card mb-4 shadow col-12 col-md">
                 <div className="card-body">
                   <h5 className="card-title">About</h5>
                   <p className="card-subtitle pb-3">

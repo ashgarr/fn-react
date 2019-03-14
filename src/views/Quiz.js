@@ -9,28 +9,44 @@ import Hint1 from '../components/Hint1';
 import Hint2 from '../components/Hint2';
 
 let answerArray = [null, null];
-const numOfQuestions = 3;
+let resultArray = [null, null];
+
+const numOfQuestions = 2;
+const correct = ["false", "false"];
+
+function grade() {
+    let count = 0;
+    for (let i = 0; i < numOfQuestions; i++) {
+        if (answerArray[i] == correct[i]) {
+            count += 1;
+            resultArray[i] = true;
+        } else {
+            resultArray[i] = false;
+        }
+    }
+    return count;
+}
 
 class ResultCard extends Component {
-    render(){
+    render() {
         return (
             <>
-            <div className="card text-left shadow animated bounceInRight" style={{height: '27rem'}}>
-                <div className="card-body">
-                    <h5 className="card-title">Your Answers</h5>
-                    <h6 className="card-subtitle font-weight-normal text-muted">
-                        What you picked:
+                <div className="card text-left shadow animated bounceInRight" style={{ height: '27rem' }}>
+                    <div className="card-body">
+                        <h5 className="card-title">Your Quiz Result</h5>
+                        <h6 className="card-subtitle font-weight-normal text-muted">
+                            You got {grade()} out of {numOfQuestions}!
                     </h6>
-                    <p className="card-text pt-2">
-                        <small>
-                            For Q1, you picked {answerArray[0]};
+                        <p className="card-text pt-2">
+                            <small>
+                                For Q1, you picked {answerArray[0]};
                             <br />
-                            For Q2, you picked {answerArray[1]};
+                                For Q2, you picked {answerArray[1]};
                         </small>
-                    </p>
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </>
+            </>
         )
     }
 }
@@ -42,7 +58,7 @@ function ShowCard(props) {
     if (props.number == "2") {
         return <QuizCard2 />;
     }
-    if (props.number == numOfQuestions) {
+    if (props.number == numOfQuestions + 1) {
         return <ResultCard />;
     }
 }
@@ -54,7 +70,7 @@ function ShowHint(props) {
     if (props.number == "2") {
         return <Hint2 />;
     }
-    if (props.number == numOfQuestions) {
+    if (props.number == numOfQuestions + 1) {
         return <> </>;
     }
 }
@@ -79,43 +95,43 @@ class Quiz extends Component {
 
                         <div className="col-2">
                             <p>
-                                {this.state.progress} / {numOfQuestions}
+                                {this.state.progress < numOfQuestions ? this.state.progress : numOfQuestions} / {numOfQuestions}
                             </p>
-                            <ProgressBar now={this.state.progress * 100 / numOfQuestions} />
+                            <ProgressBar now={(this.state.progress) * 100 / numOfQuestions} />
                         </div>
 
                         <div className="col-8">
 
                             <ShowCard number={qnum} />
 
-                                <div className="card-body align-self-center">
-                                    <Button
-                                        className="btn btn-primary mr-5"
-                                        onClick={() => {
-                                            answerArray[this.state.progress-1] = "true";
-                                            this.setState({
-                                                progress: this.state.progress + 1,
-                                            })
-                                            console.log(answerArray);
-                                        }}
-                                    >REAL</Button
-                                    >
-                                    <Button
-                                        className="btn btn-danger ml-5"
-                                        onClick={() => {
-                                            answerArray[this.state.progress-1] = "false";
-                                            this.setState({
-                                                progress: this.state.progress + 1,
-                                            })
-                                            console.log(answerArray);
-                                        }}
-                                    >FAKE</Button
-                                    >
-                                </div>
+                            <div className="card-body align-self-center">
+                                <Button
+                                    className="btn btn-primary mr-5"
+                                    onClick={() => {
+                                        answerArray[this.state.progress - 1] = "true";
+                                        this.setState({
+                                            progress: this.state.progress + 1,
+                                        })
+                                        console.log(answerArray);
+                                    }}
+                                >REAL</Button
+                                >
+                                <Button
+                                    className="btn btn-danger ml-5"
+                                    onClick={() => {
+                                        answerArray[this.state.progress - 1] = "false";
+                                        this.setState({
+                                            progress: this.state.progress + 1,
+                                        })
+                                        console.log(answerArray);
+                                    }}
+                                >FAKE</Button
+                                >
+                            </div>
                         </div>
 
                         <div className="col-2">
-                            
+
                             <ShowHint number={qnum} />
 
                         </div>
