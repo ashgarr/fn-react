@@ -155,7 +155,7 @@ class Verify extends Component {
                     <input type="text" name="author" value={this.state.author} onChange={this.handleAuthorEdit} />
                     <br />
                     Title of the news:<br />
-                    <input type="text" name="title" value={this.state.title} onChange={this.handleAuthorEdit} />
+                    <input type="text" name="title" value={this.state.title} onChange={this.handleTitleEdit} />
                     <br />
                     Content of the news:<br />
                     <input type="text" name="content" value={this.state.content} onChange={this.handleContentEdit} />
