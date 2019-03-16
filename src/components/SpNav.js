@@ -22,13 +22,13 @@ class SpNav extends Component {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
             </Nav>
-            <Nav className="Menu mt-2">
+            <Nav className="Menu mt-2 mr-5">
               {/* <a href="#deets">Quiz</a>
             <a href="#deets">Verify</a>
             <a href="#deets">About</a> */}
               <NavItem><Link to="/quiz" className="nav-link">Quiz</Link></NavItem>
               <NavItem><Link to="/verify" className="nav-link">Verify</Link></NavItem>
-              <NavItem className="mr-5"><Link to="/about" className="nav-link">About</Link></NavItem>
+              <NavItem><Link to="/about" className="nav-link">About</Link></NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
