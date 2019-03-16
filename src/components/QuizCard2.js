@@ -19,7 +19,7 @@ class QuizCard2 extends Component {
                     <div className="card-body">
                         <h5 className="card-title">Is Donald Trump Autistic?</h5>
                         <h6 className="card-subtitle font-weight-normal text-muted">
-                            abovetopsecret.com
+                            abovetopsecret.com, 2016-10-27
                         </h6>
                         <p className="card-text pt-2">
                             <small>

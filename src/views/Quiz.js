@@ -5,14 +5,18 @@ import VerticallyCenteredModal from '../components/VerticallyCenteredModal';
 import Button from 'react-bootstrap/Button'
 import QuizCard1 from '../components/QuizCard1';
 import QuizCard2 from '../components/QuizCard2';
+import QuizCard3 from '../components/QuizCard3';
+import QuizCard4 from '../components/QuizCard4'
 import Hint1 from '../components/Hint1';
 import Hint2 from '../components/Hint2';
+import Hint3 from '../components/Hint3';
+import Hint4 from '../components/Hint4';
 
-let answerArray = [null, null];
-let resultArray = [null, null];
+let answerArray = [null, null, null, null];
+let resultArray = [null, null, null, null];
 
-const numOfQuestions = 2;
-const correct = ["false", "false"];
+const numOfQuestions = 4;
+const correct = ["false", "false", "true", "true"];
 
 function grade() {
     let count = 0;
@@ -42,6 +46,10 @@ class ResultCard extends Component {
                                 For Q1, you picked {answerArray[0]};
                             <br />
                                 For Q2, you picked {answerArray[1]};
+                                <br />
+                                For Q3, you picked {answerArray[2]};
+                                <br />
+                                For Q4, you picked {answerArray[3]};
                         </small>
                         </p>
                     </div>
@@ -58,6 +66,12 @@ function ShowCard(props) {
     if (props.number == "2") {
         return <QuizCard2 />;
     }
+    if (props.number == "3") {
+        return <QuizCard3 />;
+    }
+    if (props.number == "4") {
+        return <QuizCard4 />;
+    }
     if (props.number == numOfQuestions + 1) {
         return <ResultCard />;
     }
@@ -69,6 +83,12 @@ function ShowHint(props) {
     }
     if (props.number == "2") {
         return <Hint2 />;
+    }
+    if (props.number == "3") {
+        return <Hint3 />;
+    }
+    if (props.number == "4") {
+        return <Hint4 />;
     }
     if (props.number == numOfQuestions + 1) {
         return <> </>;

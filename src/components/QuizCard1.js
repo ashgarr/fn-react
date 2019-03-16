@@ -18,7 +18,7 @@ class QuizCard1 extends Component {
                     <div className="card-body">
                         <h5 className="card-title">FANTASTIC! TRUMP'S 7 POINT PLAN Begins With A Bombshell!</h5>
                         <h6 className="card-subtitle font-weight-normal text-muted">
-                            100percentfedup.com
+                            100percentfedup.com, 2016-11-01
                         </h6>
                         <p className="card-text pt-2">
                             <small>
