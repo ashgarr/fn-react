@@ -6,17 +6,25 @@ import Button from 'react-bootstrap/Button'
 import QuizCard1 from '../components/QuizCard1';
 import QuizCard2 from '../components/QuizCard2';
 import QuizCard3 from '../components/QuizCard3';
-import QuizCard4 from '../components/QuizCard4'
+import QuizCard4 from '../components/QuizCard4';
+import QuizCard5 from '../components/QuizCard5';
+import QuizCard6 from '../components/QuizCard6';
+import QuizCard7 from '../components/QuizCard7';
+import QuizCard8 from '../components/QuizCard8';
 import Hint1 from '../components/Hint1';
 import Hint2 from '../components/Hint2';
 import Hint3 from '../components/Hint3';
 import Hint4 from '../components/Hint4';
+import Hint5 from '../components/Hint5';
+import Hint6 from '../components/Hint6';
+import Hint7 from '../components/Hint7';
+import Hint8 from '../components/Hint8';
 
 let answerArray = [null, null, null, null];
 let resultArray = [null, null, null, null];
 
-const numOfQuestions = 4;
-const correct = ["FAKE", "FAKE", "REAL", "REAL"];
+const numOfQuestions = 5;
+const correct = ["FAKE", "FAKE", "REAL", "FAKE", "REAL"];
 
 function grade() {
     let count = 0;
@@ -98,6 +106,9 @@ function ShowCard(props) {
     if (props.number == "4") {
         return <QuizCard4 />;
     }
+    if (props.number == "5") {
+        return <QuizCard5 />;
+    }
     if (props.number == numOfQuestions + 1) {
         return <ResultCard />;
     }
@@ -115,6 +126,9 @@ function ShowHint(props) {
     }
     if (props.number == "4") {
         return <Hint4 />;
+    }
+    if (props.number == "5") {
+        return <Hint5 />;
     }
     if (props.number == numOfQuestions + 1) {
         return <> </>;
