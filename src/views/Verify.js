@@ -113,7 +113,7 @@ class Verify extends Component {
 
             this.message = this.message + '. Use caution with this article.'
         } else {
-            this.message = 'This article doesn\'t appear in our system, and should be safe to use.'
+            this.message = 'This article doesn\'t appear in our system, and should be safe to use.<br />Be sure to always use caution with suspicious articles.'
         }
 
         return this.message;
