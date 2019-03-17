@@ -16,7 +16,7 @@ let answerArray = [null, null, null, null];
 let resultArray = [null, null, null, null];
 
 const numOfQuestions = 4;
-const correct = ["false", "false", "true", "true"];
+const correct = ["FAKE", "FAKE", "REAL", "REAL"];
 
 function grade() {
     let count = 0;
@@ -42,15 +42,23 @@ class ResultCard extends Component {
                             You got {grade()} out of {numOfQuestions}!
                     </h6>
                         <p className="card-text pt-2">
-                            <small>
-                                For Q1, you picked {answerArray[0]};
+                            {/* <small> */}
+                            For Q1, you picked {answerArray[0] == "FAKE" ?
+                                <span className='text-danger'><strong>FAKE</strong></span> :
+                                <span className='text-primary'><strong> REAL </strong></span>};
                             <br />
-                                For Q2, you picked {answerArray[1]};
-                                <br />
-                                For Q3, you picked {answerArray[2]};
-                                <br />
-                                For Q4, you picked {answerArray[3]};
-                        </small>
+                            For Q2, you picked {answerArray[1] == "FAKE" ?
+                                <span className='text-danger'><strong>FAKE</strong></span> :
+                                <span className='text-primary'><strong> REAL </strong></span>};
+                            <br />
+                            For Q3, you picked {answerArray[2] == "FAKE" ?
+                                <span className='text-danger'><strong>FAKE</strong></span> :
+                                <span className='text-primary'><strong> REAL </strong></span>};
+                            <br />
+                            For Q4, you picked {answerArray[3] == "FAKE" ?
+                                <span className='text-danger'><strong>FAKE</strong></span> :
+                                <span className='text-primary'><strong> REAL </strong></span>};
+                        {/* </small> */}
                         </p>
                     </div>
                 </div>
@@ -95,7 +103,6 @@ function ShowHint(props) {
     }
 }
 
-
 class Quiz extends Component {
     constructor(props) {
         super(props);
@@ -103,8 +110,42 @@ class Quiz extends Component {
             progress: 1,
             modalShow: true,
             answers: answerArray
+        };
+    }
+
+    ShowButton() {
+        if (this.state.progress == numOfQuestions + 1) {
+            return <> </>;
+        } else {
+            return (
+                <div className="card-body align-self-center">
+                    <Button
+                        className="btn-lg btn-primary mr-5"
+                        onClick={() => {
+                            answerArray[this.state.progress - 1] = "REAL";
+                            this.setState({
+                                progress: this.state.progress + 1,
+                            })
+                            console.log(answerArray);
+                        }}
+                    >REAL
+            </Button>
+                    <Button
+                        className="btn-lg btn-danger ml-5"
+                        onClick={() => {
+                            answerArray[this.state.progress - 1] = "FAKE";
+                            this.setState({
+                                progress: this.state.progress + 1,
+                            })
+                            console.log(answerArray);
+                        }}
+                    >FAKE
+            </Button>
+                </div>
+            )
         }
     }
+
     render() {
         let modalClose = () => this.setState({ modalShow: false });
         let qnum = this.state.progress;
@@ -123,31 +164,9 @@ class Quiz extends Component {
                         <div className="col-8">
 
                             <ShowCard number={qnum} />
+                            
+                            {this.ShowButton()}
 
-                            <div className="card-body align-self-center">
-                                <Button
-                                    className="btn-lg btn-primary mr-5"
-                                    onClick={() => {
-                                        answerArray[this.state.progress - 1] = "true";
-                                        this.setState({
-                                            progress: this.state.progress + 1,
-                                        })
-                                        console.log(answerArray);
-                                    }}
-                                >REAL</Button
-                                >
-                                <Button
-                                    className="btn-lg btn-danger ml-5"
-                                    onClick={() => {
-                                        answerArray[this.state.progress - 1] = "false";
-                                        this.setState({
-                                            progress: this.state.progress + 1,
-                                        })
-                                        console.log(answerArray);
-                                    }}
-                                >FAKE</Button
-                                >
-                            </div>
                         </div>
 
                         <div className="col-2">

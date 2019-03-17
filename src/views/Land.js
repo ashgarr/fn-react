@@ -7,7 +7,7 @@ class Land extends Component {
 
     render() {
         return ( 
-        <div class="landpage">
+        <div>
             <Jumbotron>
             <h1 > This is FNProof. </h1> <h5 >
             We aim to provide tools
