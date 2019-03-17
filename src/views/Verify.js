@@ -92,7 +92,7 @@ class Verify extends Component {
     }
 
     alertStruct = (count, site, author, title, content, type) => {
-        if (count !== 0) { // changing this.count to count fixes this line; need to double check why
+        if (count !== 0) {
             this.message = 'Flags have been raised on the '
             
             if (site) {
@@ -113,7 +113,7 @@ class Verify extends Component {
 
             this.message = this.message + '. Use caution with this article.'
         } else {
-            this.message = 'This article doesn\'t appear in our system, and should be safe to use.'
+            this.message = 'This article doesn\'t appear in our system, and should be safe to use.<br />Be sure to always use caution with suspicious articles.'
         }
 
         return this.message;
@@ -147,20 +147,20 @@ class Verify extends Component {
         return (
             <div>
                 { this.state.alert && <Alert alertText={this.state.alertText}/> }
-                <div>
-                    Link of the news:<br />
+                <div className="mt-4">
+                    Link to the article:<br />
                     <input type="text" id="link" name="link" value={this.state.link} onChange={this.handleLinkEdit}/>
                     <br />
-                    Author of the news:<br />
+                    Author of the article:<br />
                     <input type="text" name="author" value={this.state.author} onChange={this.handleAuthorEdit} />
                     <br />
-                    Title of the news:<br />
+                    Title of the article:<br />
                     <input type="text" name="title" value={this.state.title} onChange={this.handleTitleEdit} />
                     <br />
-                    Content of the news:<br />
+                    Text of the article:<br />
                     <input type="text" name="content" value={this.state.content} onChange={this.handleContentEdit} />
                     <br />
-                    <button className="mt-4 btn btn-warning" onClick={this.go} disabled={this.state.blockButton}>quick check</button>
+                    <button className="mt-4 btn btn-warning" onClick={this.go} disabled={this.state.blockButton}>Verify!</button>
                 </div>
             </div>
         )
