@@ -43,7 +43,7 @@ class ResultCard extends Component {
     render() {
         return (
             <div>
-                <div className="card text-left shadow animated bounceInRight" style={{ height: '27rem' }}>
+                <div className="card text-left shadow animated bounceInRight">
                     <div className="card-body">
                         <h5 className="card-title">Your Quiz Result</h5>
                         <h6 className="card-subtitle font-weight-normal text-muted">
@@ -56,7 +56,7 @@ class ResultCard extends Component {
                                 which is {resultArray[0] ?
                                 <span> &#9989;</span> :
                                 <span> &#10062;</span>}
-                                
+
                             <br />
                             For Q2, you picked {answerArray[1] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
@@ -79,29 +79,50 @@ class ResultCard extends Component {
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[3] ?
                                 <span> &#9989;</span> :
-                                <span> &#10062;</span>}
-                                                            <br />
+                                <><span> &#10062;</span>
+                                    <br />
+                                    <strong>Key for solving this:</strong> after googling the author, you will realize that the author of this
+                                    article is notoriously known for creating and spreading fake news.
+                                <br />
+                                    <a href="https://www.factcheck.org/2016/02/debunking-obamas-dubai-domicile/">
+                                        More about this piece of news
+                                </a>
+                                    <br />
+                                </>
+                            }
+
+                            <br />
                             For Q5, you picked {answerArray[4] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[4] ?
                                 <span> &#9989;</span> :
                                 <span> &#10062;</span>}
-                                                            <br />
+                            <br />
                             For Q6, you picked {answerArray[5] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[5] ?
                                 <span> &#9989;</span> :
-                                <span> &#10062;</span>}
-                                                            <br />
+                                <>
+                                    <span> &#10062;</span>
+                                    <br />
+                                    <strong>Key for solving this:</strong> check the date! Ford did shift its truck production from Mexico to Ohio,
+                                but it's decided <strong>a year</strong> before Trump won the election. So the correlation implied in the title did not stand.
+                                <a href="https://www.snopes.com/fact-check/ford-from-mexico-to-ohio/">
+                                        More about this piece of news
+                                </a>
+                                    <br />
+                                </>
+                            }
+                            <br />
                             For Q7, you picked {answerArray[6] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[6] ?
                                 <span> &#9989;</span> :
                                 <span> &#10062;</span>}
-                                                            <br />
+                            <br />
                             For Q8, you picked {answerArray[7] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
                                 <span className='text-primary'><strong> REAL</strong></span>},
@@ -111,8 +132,8 @@ class ResultCard extends Component {
 
                             <br />
                             <br />
-                            For more instruction on how to spot fake news, we highly recommend you read 
-                            <a rel= "noopener noreferrer" target="_blank" href="https://www.factcheck.org/2016/11/how-to-spot-fake-news/"> this article</a> by FactCheck.org.
+                            For more instruction on how to spot fake news, we highly recommend you read
+                            <a rel="noopener noreferrer" target="_blank" href="https://www.factcheck.org/2016/11/how-to-spot-fake-news/"> this article</a> by FactCheck.org.
                         </p>
                     </div>
                 </div>

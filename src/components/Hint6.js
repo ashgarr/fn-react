@@ -38,9 +38,9 @@ class Hint4 extends Component {
                 ...props.style,
               }}
             >
-              Look at the source
+              Check out the published date
               <br />
-               and date of the news
+               of the cited CNN article
             </div>
           )}
         </Overlay>
