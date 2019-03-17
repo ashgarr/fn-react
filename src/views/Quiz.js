@@ -55,7 +55,15 @@ class ResultCard extends Component {
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[0] ?
                                 <span> &#9989;</span> :
-                                <span> &#10062;</span>}
+
+                                <>
+                                    <span> &#10062;</span>
+                                    <br />
+                                    <strong>Key for solving this:</strong> The language used is extremely exaggerated. Pay attention to words like
+                                    "suffer," "incredible," "tragically," etc. Without statistics or poll, the author can't justify the use of those words.
+                            <br />
+                                </>
+                            }
 
                             <br />
                             For Q2, you picked {answerArray[1] == "FAKE" ?
@@ -65,7 +73,7 @@ class ResultCard extends Component {
                                 <span> &#9989;</span> :
                                 <span> &#10062;</span>}
 
-                            <br />
+                            <br /><br />
                             For Q3, you picked {answerArray[2] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
                                 <span className='text-primary'><strong> REAL</strong></span>},
@@ -73,7 +81,7 @@ class ResultCard extends Component {
                                 <span> &#9989;</span> :
                                 <span> &#10062;</span>}
 
-                            <br />
+                            <br /><br />
                             For Q4, you picked {answerArray[3] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
                                 <span className='text-primary'><strong> REAL</strong></span>},
@@ -98,7 +106,8 @@ class ResultCard extends Component {
                                 which is {resultArray[4] ?
                                 <span> &#9989;</span> :
                                 <span> &#10062;</span>}
-                            <br />
+                            <br /><br />
+
                             For Q6, you picked {answerArray[5] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
                                 <span className='text-primary'><strong> REAL</strong></span>},
@@ -109,7 +118,8 @@ class ResultCard extends Component {
                                     <br />
                                     <strong>Key for solving this:</strong> check the date! Ford did shift its truck production from Mexico to Ohio,
                                 but it's decided <strong>a year</strong> before Trump won the election. So the correlation implied in the title did not stand.
-                                <a href="https://www.snopes.com/fact-check/ford-from-mexico-to-ohio/">
+                               <br />
+                                    <a href="https://www.snopes.com/fact-check/ford-from-mexico-to-ohio/">
                                         More about this piece of news
                                 </a>
                                     <br />
@@ -122,7 +132,7 @@ class ResultCard extends Component {
                                 which is {resultArray[6] ?
                                 <span> &#9989;</span> :
                                 <span> &#10062;</span>}
-                            <br />
+                            <br /><br />
                             For Q8, you picked {answerArray[7] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
                                 <span className='text-primary'><strong> REAL</strong></span>},
