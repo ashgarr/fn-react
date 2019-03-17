@@ -43,8 +43,8 @@ function grade() {
 class ResultCard extends Component {
     render() {
         return (
-            <div id="capture">
-                <div className="card text-left shadow animated bounceInRight">
+            <div>
+                <div className="card text-left shadow">
                     <div className="card-body">
                         <h5 className="card-title">Your Quiz Result</h5>
                         <h6 className="card-subtitle font-weight-normal text-muted">
@@ -198,7 +198,9 @@ function ShowCard(props) {
         return <QuizCard8 />;
     }
     if (props.number == numOfQuestions + 1) {
-        return <ResultCard />;
+        return <> </>;
+        // <ResultCard />
+        // ;
     }
 }
 
@@ -242,31 +244,6 @@ class Quiz extends Component {
         };
     }
 
-    // IntoPDF() {
-    //     html2canvas(document.querySelector("#capture")).then(canvas => {
-    //         document.body.appendChild(canvas);
-    //         const input = document.getElementById('divIdToPrint');
-    //         html2canvas(input).then((canvas) => {
-    //             const imgData = canvas.toDataURL('image/PNG');
-    //             const pdf = new jsPDF();
-    //             pdf.addImage(imgData, 'PNG', 0, 0);
-    //             pdf.save("download.pdf");
-    //         });
-    //     });
-
-    // const input = document.getElementById('divIdToPrint');
-
-
-    // html2canvas(input)
-    //     .then((canvas) => {
-    //         const imgData = canvas.toDataURL('image/png');
-    //         const pdf = new jsPDF();
-    //         pdf.addImage(imgData, 'PNG', 0, 0);
-    //         pdf.save("download.pdf");
-    //     });
-
-    // }
-
     exportPDF = () => {
         this.resume.save();
     }
@@ -282,16 +259,14 @@ class Quiz extends Component {
                         keywords=""
                         ref={(r) => this.resume = r}>
                         <div style={{
-                            // height: 792,
-                            // width: 612,
-                            // padding: 'none',
-                            // backgroundColor: 'white',
-                            // boxShadow: '5px 5px 5px black',
-                            // margin: 'auto',
                             overflowX: 'hidden',
                             overflowY: 'hidden'
                         }}>
-                            content
+                        <ResultCard />
+
+                        
+                        {/* <div><ResultCard /></div> */}
+                            {/* <ResultCard /> */}
                         </div>
                     </PDFExport>
 
