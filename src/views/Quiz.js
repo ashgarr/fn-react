@@ -34,7 +34,7 @@ function grade() {
 class ResultCard extends Component {
     render() {
         return (
-            <>
+            <div>
                 <div className="card text-left shadow animated bounceInRight" style={{ height: '27rem' }}>
                     <div className="card-body">
                         <h5 className="card-title">Your Quiz Result</h5>
@@ -54,7 +54,7 @@ class ResultCard extends Component {
                         </p>
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
 }
@@ -126,7 +126,7 @@ class Quiz extends Component {
 
                             <div className="card-body align-self-center">
                                 <Button
-                                    className="btn btn-primary mr-5"
+                                    className="btn-lg btn-primary mr-5"
                                     onClick={() => {
                                         answerArray[this.state.progress - 1] = "true";
                                         this.setState({
@@ -137,7 +137,7 @@ class Quiz extends Component {
                                 >REAL</Button
                                 >
                                 <Button
-                                    className="btn btn-danger ml-5"
+                                    className="btn-lg btn-danger ml-5"
                                     onClick={() => {
                                         answerArray[this.state.progress - 1] = "false";
                                         this.setState({
