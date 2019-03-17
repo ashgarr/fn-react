@@ -40,7 +40,7 @@ class Hint4 extends Component {
             >
               Look at the source
               <br />
-               and date of the news
+               and use of language
             </div>
           )}
         </Overlay>

@@ -71,9 +71,17 @@ class ResultCard extends Component {
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[1] ?
                                 <span> &#9989;</span> :
-                                <span> &#10062;</span>}
+                                <>
+                                    <span> &#10062;</span>
+                                    <br />
+                                    <strong>Key for solving this:</strong> The reasoning process contains many logical fallacies and none of the claims
+                                    are supported by credible sources. Try to read carefully sentence by sentence to see how this vulnerable argument is built up.
+                        <br />
+                                </>
 
-                            <br /><br />
+                            }
+
+                            <br />
                             For Q3, you picked {answerArray[2] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
                                 <span className='text-primary'><strong> REAL</strong></span>},
@@ -89,7 +97,7 @@ class ResultCard extends Component {
                                 <span> &#9989;</span> :
                                 <><span> &#10062;</span>
                                     <br />
-                                    <strong>Key for solving this:</strong> after googling the author, you will realize that the author of this
+                                    <strong>Key for solving this:</strong> After googling the author, you will realize that the author of this
                                     article is notoriously known for creating and spreading fake news.
                                 <br />
                                     <a href="https://www.factcheck.org/2016/02/debunking-obamas-dubai-domicile/">
@@ -98,8 +106,8 @@ class ResultCard extends Component {
                                     <br />
                                 </>
                             }
-
                             <br />
+
                             For Q5, you picked {answerArray[4] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
                                 <span className='text-primary'><strong> REAL</strong></span>},
@@ -116,7 +124,7 @@ class ResultCard extends Component {
                                 <>
                                     <span> &#10062;</span>
                                     <br />
-                                    <strong>Key for solving this:</strong> check the date! Ford did shift its truck production from Mexico to Ohio,
+                                    <strong>Key for solving this:</strong> Check the date! Ford did shift its truck production from Mexico to Ohio,
                                 but it's decided <strong>a year</strong> before Trump won the election. So the correlation implied in the title did not stand.
                                <br />
                                     <a href="https://www.snopes.com/fact-check/ford-from-mexico-to-ohio/">
@@ -126,6 +134,7 @@ class ResultCard extends Component {
                                 </>
                             }
                             <br />
+
                             For Q7, you picked {answerArray[6] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
                                 <span className='text-primary'><strong> REAL</strong></span>},
@@ -133,16 +142,26 @@ class ResultCard extends Component {
                                 <span> &#9989;</span> :
                                 <span> &#10062;</span>}
                             <br /><br />
+
                             For Q8, you picked {answerArray[7] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[7] ?
                                 <span> &#9989;</span> :
-                                <span> &#10062;</span>}
-
+                                <>
+                                    <span> &#10062;</span>
+                                    <br />
+                                    <strong>Key for solving this:</strong> Google the announcement! FDA has never made such announcement.
+                                    Also pay attention to the exaggerated use of language and obvious conspiracy theories like "The
+                                    FDA have removed the pamphlet/article."
+                                    <br />
+                                    <a href="https://www.factcheck.org/2017/11/debunking-false-vaccine-claim/">
+                                        More about this piece of news</a>
+                                    <br />
+                                </>}
                             <br />
                             <br />
-                            For more instruction on how to spot fake news, we highly recommend you read
+                            For more detailed instruction on how to spot fake news, we highly recommend you read
                             <a rel="noopener noreferrer" target="_blank" href="https://www.factcheck.org/2016/11/how-to-spot-fake-news/"> this article</a> by FactCheck.org.
                         </p>
                     </div>
@@ -227,19 +246,19 @@ class Quiz extends Component {
             return (
                 <div className="card-body align-self-center">
                     <Button
-                        className="btn-lg btn-success mr-5"
+                        className="btn-lg btn-info mr-5"
                         onClick={() => {
 
                         }}
                     >Share this!
                     </Button>
-                    <Button
+                    {/* <Button
                         className="btn-lg btn-info mr-5"
                         onClick={() => {
 
                         }}
                     >Download
-                    </Button>
+                    </Button> */}
                 </div>
             );
         } else {
