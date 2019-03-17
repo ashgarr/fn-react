@@ -57,7 +57,7 @@ class ResultCard extends Component {
                                 <span> &#9989;</span> :
 
                                 <>
-                                    <span> &#10062;</span>
+                                    <span> &#10060;</span>
                                     <br />
                                     <strong>Key for solving this:</strong> The language used is extremely exaggerated. Pay attention to words like
                                     "suffer," "incredible," "tragically," etc. Without statistics or poll, the author can't justify the use of those words.
@@ -72,7 +72,7 @@ class ResultCard extends Component {
                                 which is {resultArray[1] ?
                                 <span> &#9989;</span> :
                                 <>
-                                    <span> &#10062;</span>
+                                    <span> &#10060;</span>
                                     <br />
                                     <strong>Key for solving this:</strong> The reasoning process contains many logical fallacies and none of the claims
                                     are supported by credible sources. Try to read carefully sentence by sentence to see how this vulnerable argument is built up.
@@ -87,7 +87,7 @@ class ResultCard extends Component {
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[2] ?
                                 <span> &#9989;</span> :
-                                <span> &#10062;</span>}
+                                <span> &#10060;</span>}
 
                             <br /><br />
                             For Q4, you picked {answerArray[3] == "FAKE" ?
@@ -95,7 +95,7 @@ class ResultCard extends Component {
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[3] ?
                                 <span> &#9989;</span> :
-                                <><span> &#10062;</span>
+                                <><span> &#10060;</span>
                                     <br />
                                     <strong>Key for solving this:</strong> After googling the author, you will realize that the author of this
                                     article is notoriously known for creating and spreading fake news.
@@ -113,7 +113,7 @@ class ResultCard extends Component {
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[4] ?
                                 <span> &#9989;</span> :
-                                <span> &#10062;</span>}
+                                <span> &#10060;</span>}
                             <br /><br />
 
                             For Q6, you picked {answerArray[5] == "FAKE" ?
@@ -122,7 +122,7 @@ class ResultCard extends Component {
                                 which is {resultArray[5] ?
                                 <span> &#9989;</span> :
                                 <>
-                                    <span> &#10062;</span>
+                                    <span> &#10060;</span>
                                     <br />
                                     <strong>Key for solving this:</strong> Check the date! Ford did shift its truck production from Mexico to Ohio,
                                 but it's decided <strong>a year</strong> before Trump won the election. So the correlation implied in the title did not stand.
@@ -140,7 +140,7 @@ class ResultCard extends Component {
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[6] ?
                                 <span> &#9989;</span> :
-                                <span> &#10062;</span>}
+                                <span> &#10060;</span>}
                             <br /><br />
 
                             For Q8, you picked {answerArray[7] == "FAKE" ?
@@ -149,7 +149,7 @@ class ResultCard extends Component {
                                 which is {resultArray[7] ?
                                 <span> &#9989;</span> :
                                 <>
-                                    <span> &#10062;</span>
+                                    <span> &#10060;</span>
                                     <br />
                                     <strong>Key for solving this:</strong> Google the announcement! FDA has never made such announcement.
                                     Also pay attention to the exaggerated use of language and obvious conspiracy theories like "The
