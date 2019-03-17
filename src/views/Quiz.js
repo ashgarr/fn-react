@@ -20,7 +20,6 @@ import Hint6 from '../components/Hint6';
 import Hint7 from '../components/Hint7';
 import Hint8 from '../components/Hint8';
 import html2canvas from 'html2canvas';
-//import jsPDF from 'jspdf';
 const jsPDF = require('jspdf')
 
 let answerArray = [null, null, null, null, null, null, null, null];
@@ -246,24 +245,27 @@ class Quiz extends Component {
 
     IntoPDF() {
         html2canvas(document.querySelector("#capture")).then(canvas => {
-            document.body.appendChild(canvas)
-        });
-
-        const input = document.getElementById('divIdToPrint');
-        html2canvas(input)
-            .then((canvas) => {
-                const imgData = canvas.toDataURL('image/png');
-            })
-            ;
-
-        html2canvas(input)
-            .then((canvas) => {
-                const imgData = canvas.toDataURL('image/png');
+            document.body.appendChild(canvas);
+            const input = document.getElementById('divIdToPrint');
+            html2canvas(input).then((canvas) => {
+                const imgData = canvas.toDataURL('image/PNG');
                 const pdf = new jsPDF();
                 pdf.addImage(imgData, 'PNG', 0, 0);
                 pdf.save("download.pdf");
             });
-        ;
+        });
+
+        // const input = document.getElementById('divIdToPrint');
+
+
+        // html2canvas(input)
+        //     .then((canvas) => {
+        //         const imgData = canvas.toDataURL('image/png');
+        //         const pdf = new jsPDF();
+        //         pdf.addImage(imgData, 'PNG', 0, 0);
+        //         pdf.save("download.pdf");
+        //     });
+        
     }
 
     ShowButton() {
