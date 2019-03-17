@@ -100,7 +100,7 @@ class ResultCard extends Component {
                                     <strong>Key for solving this:</strong> After googling the author, you will realize that the author of this
                                     article is notoriously known for creating and spreading fake news.
                                 <br />
-                                    <a href="https://www.factcheck.org/2016/02/debunking-obamas-dubai-domicile/">
+                                    <a rel="noopener noreferrer" target="_blank" href="https://www.factcheck.org/2016/02/debunking-obamas-dubai-domicile/">
                                         More about this piece of news
                                 </a>
                                     <br />
@@ -127,7 +127,7 @@ class ResultCard extends Component {
                                     <strong>Key for solving this:</strong> Check the date! Ford did shift its truck production from Mexico to Ohio,
                                 but it's decided <strong>a year</strong> before Trump won the election. So the correlation implied in the title did not stand.
                                <br />
-                                    <a href="https://www.snopes.com/fact-check/ford-from-mexico-to-ohio/">
+                                    <a rel="noopener noreferrer" target="_blank" href="https://www.snopes.com/fact-check/ford-from-mexico-to-ohio/">
                                         More about this piece of news
                                 </a>
                                     <br />
@@ -155,7 +155,7 @@ class ResultCard extends Component {
                                     Also pay attention to the exaggerated use of language and obvious conspiracy theories like "The
                                     FDA have removed the pamphlet/article."
                                     <br />
-                                    <a href="https://www.factcheck.org/2017/11/debunking-false-vaccine-claim/">
+                                    <a rel="noopener noreferrer" target="_blank" href="https://www.factcheck.org/2017/11/debunking-false-vaccine-claim/">
                                         More about this piece of news</a>
                                     <br />
                                 </>}
