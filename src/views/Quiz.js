@@ -19,6 +19,7 @@ import Hint5 from '../components/Hint5';
 import Hint6 from '../components/Hint6';
 import Hint7 from '../components/Hint7';
 import Hint8 from '../components/Hint8';
+import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
 
 let answerArray = [null, null, null, null, null, null, null, null];
 let resultArray = [null, null, null, null, null, null, null, null];
@@ -253,36 +254,62 @@ class Quiz extends Component {
     //         });
     //     });
 
-        // const input = document.getElementById('divIdToPrint');
+    // const input = document.getElementById('divIdToPrint');
 
 
-        // html2canvas(input)
-        //     .then((canvas) => {
-        //         const imgData = canvas.toDataURL('image/png');
-        //         const pdf = new jsPDF();
-        //         pdf.addImage(imgData, 'PNG', 0, 0);
-        //         pdf.save("download.pdf");
-        //     });
-        
+    // html2canvas(input)
+    //     .then((canvas) => {
+    //         const imgData = canvas.toDataURL('image/png');
+    //         const pdf = new jsPDF();
+    //         pdf.addImage(imgData, 'PNG', 0, 0);
+    //         pdf.save("download.pdf");
+    //     });
+
     // }
+
+    exportPDF = () => {
+        this.resume.save();
+    }
 
     ShowButton() {
         if (this.state.progress == numOfQuestions + 1) {
             return (
-                <div className="card-body align-self-center">
-                    <Button
-                        className="btn-lg btn-info mr-5"
-                        onClick={() => {
+                <>
+                    <PDFExport paperSize={'Letter'}
+                        fileName="download.pdf"
+                        title=""
+                        subject=""
+                        keywords=""
+                        ref={(r) => this.resume = r}>
+                        <div style={{
+                            // height: 792,
+                            // width: 612,
+                            // padding: 'none',
+                            // backgroundColor: 'white',
+                            // boxShadow: '5px 5px 5px black',
+                            // margin: 'auto',
+                            overflowX: 'hidden',
+                            overflowY: 'hidden'
+                        }}>
+                            content
+                        </div>
+                    </PDFExport>
 
-                        }}
-                    >Share this!
+                    <div className="card-body align-self-center">
+                        {/* <Button
+                            className="btn-lg btn-info mr-5"
+                            onClick={() => {
+
+                            }}
+                        >Share this!
+                    </Button> */}
+                        <Button
+                            className="btn-lg btn-info mr-5"
+                            onClick={() => this.exportPDF()}
+                        >Download
                     </Button>
-                    <Button
-                        className="btn-lg btn-info mr-5"
-                        onClick={() => this.IntoPDF()}
-                    >Download
-                    </Button>
-                </div>
+                    </div>
+                </>
             );
         } else {
             return (
