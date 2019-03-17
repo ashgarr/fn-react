@@ -172,6 +172,8 @@ class ResultCard extends Component {
     }
 }
 
+
+
 function ShowCard(props) {
     if (props.number == "1") {
         return <QuizCard1 />;
@@ -198,9 +200,7 @@ function ShowCard(props) {
         return <QuizCard8 />;
     }
     if (props.number == numOfQuestions + 1) {
-        return <> </>;
-        // <ResultCard />
-        // ;
+        return <></>;
     }
 }
 
@@ -262,22 +262,20 @@ class Quiz extends Component {
                             overflowX: 'hidden',
                             overflowY: 'hidden'
                         }}>
-                        <ResultCard />
+                            <ResultCard />
 
-                        
-                        {/* <div><ResultCard /></div> */}
-                            {/* <ResultCard /> */}
+
                         </div>
                     </PDFExport>
 
                     <div className="card-body align-self-center">
-                        {/* <Button
+                        <Button
                             className="btn-lg btn-info mr-5"
                             onClick={() => {
 
                             }}
                         >Share this!
-                    </Button> */}
+                    </Button>
                         <Button
                             className="btn-lg btn-info mr-5"
                             onClick={() => this.exportPDF()}
