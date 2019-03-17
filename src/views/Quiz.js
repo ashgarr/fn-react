@@ -20,11 +20,11 @@ import Hint6 from '../components/Hint6';
 import Hint7 from '../components/Hint7';
 import Hint8 from '../components/Hint8';
 
-let answerArray = [null, null, null, null];
-let resultArray = [null, null, null, null];
+let answerArray = [null, null, null, null, null, null, null, null];
+let resultArray = [null, null, null, null, null, null, null, null];
 
-const numOfQuestions = 5;
-const correct = ["FAKE", "FAKE", "REAL", "FAKE", "REAL"];
+const numOfQuestions = 8;
+const correct = ["FAKE", "FAKE", "REAL", "FAKE", "REAL", "FAKE", "REAL", "FAKE"];
 
 function grade() {
     let count = 0;
@@ -80,6 +80,34 @@ class ResultCard extends Component {
                                 which is {resultArray[3] ?
                                 <span> &#9989;</span> :
                                 <span> &#10062;</span>}
+                                                            <br />
+                            For Q5, you picked {answerArray[4] == "FAKE" ?
+                                <span className='text-danger'><strong>FAKE</strong></span> :
+                                <span className='text-primary'><strong> REAL</strong></span>},
+                                which is {resultArray[4] ?
+                                <span> &#9989;</span> :
+                                <span> &#10062;</span>}
+                                                            <br />
+                            For Q6, you picked {answerArray[5] == "FAKE" ?
+                                <span className='text-danger'><strong>FAKE</strong></span> :
+                                <span className='text-primary'><strong> REAL</strong></span>},
+                                which is {resultArray[5] ?
+                                <span> &#9989;</span> :
+                                <span> &#10062;</span>}
+                                                            <br />
+                            For Q7, you picked {answerArray[6] == "FAKE" ?
+                                <span className='text-danger'><strong>FAKE</strong></span> :
+                                <span className='text-primary'><strong> REAL</strong></span>},
+                                which is {resultArray[6] ?
+                                <span> &#9989;</span> :
+                                <span> &#10062;</span>}
+                                                            <br />
+                            For Q8, you picked {answerArray[7] == "FAKE" ?
+                                <span className='text-danger'><strong>FAKE</strong></span> :
+                                <span className='text-primary'><strong> REAL</strong></span>},
+                                which is {resultArray[7] ?
+                                <span> &#9989;</span> :
+                                <span> &#10062;</span>}
 
                             <br />
                             <br />
@@ -109,6 +137,15 @@ function ShowCard(props) {
     if (props.number == "5") {
         return <QuizCard5 />;
     }
+    if (props.number == "6") {
+        return <QuizCard6 />;
+    }
+    if (props.number == "7") {
+        return <QuizCard7 />;
+    }
+    if (props.number == "8") {
+        return <QuizCard8 />;
+    }
     if (props.number == numOfQuestions + 1) {
         return <ResultCard />;
     }
@@ -129,6 +166,15 @@ function ShowHint(props) {
     }
     if (props.number == "5") {
         return <Hint5 />;
+    }
+    if (props.number == "6") {
+        return <Hint6 />;
+    }
+    if (props.number == "7") {
+        return <Hint7 />;
+    }
+    if (props.number == "8") {
+        return <Hint8 />;
     }
     if (props.number == numOfQuestions + 1) {
         return <> </>;
