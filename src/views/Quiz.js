@@ -42,23 +42,41 @@ class ResultCard extends Component {
                             You got {grade()} out of {numOfQuestions}!
                     </h6>
                         <p className="card-text pt-2">
-                            {/* <small> */}
                             For Q1, you picked {answerArray[0] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
-                                <span className='text-primary'><strong> REAL </strong></span>};
+                                <span className='text-primary'><strong> REAL</strong></span>},
+                                which is {resultArray[0] ?
+                                <span> &#9989;</span> :
+                                <span> &#10062;</span>}
+                                
                             <br />
                             For Q2, you picked {answerArray[1] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
-                                <span className='text-primary'><strong> REAL </strong></span>};
+                                <span className='text-primary'><strong> REAL</strong></span>},
+                                which is {resultArray[1] ?
+                                <span> &#9989;</span> :
+                                <span> &#10062;</span>}
+
                             <br />
                             For Q3, you picked {answerArray[2] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
-                                <span className='text-primary'><strong> REAL </strong></span>};
+                                <span className='text-primary'><strong> REAL</strong></span>},
+                                which is {resultArray[2] ?
+                                <span> &#9989;</span> :
+                                <span> &#10062;</span>}
+
                             <br />
                             For Q4, you picked {answerArray[3] == "FAKE" ?
                                 <span className='text-danger'><strong>FAKE</strong></span> :
-                                <span className='text-primary'><strong> REAL </strong></span>};
-                        {/* </small> */}
+                                <span className='text-primary'><strong> REAL</strong></span>},
+                                which is {resultArray[3] ?
+                                <span> &#9989;</span> :
+                                <span> &#10062;</span>}
+
+                            <br />
+                            <br />
+                            For more instruction on how to spot fake news, we highly recommend you read 
+                            <a rel= "noopener noreferrer" target="_blank" href="https://www.factcheck.org/2016/11/how-to-spot-fake-news/"> this article</a> by FactCheck.org.
                         </p>
                     </div>
                 </div>
@@ -115,7 +133,24 @@ class Quiz extends Component {
 
     ShowButton() {
         if (this.state.progress == numOfQuestions + 1) {
-            return <> </>;
+            return (
+                <div className="card-body align-self-center">
+                    <Button
+                        className="btn-lg btn-success mr-5"
+                        onClick={() => {
+
+                        }}
+                    >Share this!
+                    </Button>
+                    <Button
+                        className="btn-lg btn-info mr-5"
+                        onClick={() => {
+
+                        }}
+                    >Download
+                    </Button>
+                </div>
+            );
         } else {
             return (
                 <div className="card-body align-self-center">
@@ -164,7 +199,7 @@ class Quiz extends Component {
                         <div className="col-8">
 
                             <ShowCard number={qnum} />
-                            
+
                             {this.ShowButton()}
 
                         </div>
