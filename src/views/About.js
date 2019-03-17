@@ -21,7 +21,13 @@ class About extends Component {
 
 
                     <p>
-                        While there are various definitions of fake news, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        While there are various definitions of fake news, we consider fake news as those that misinform readers. 
+                        Back in the old days, rumors spread via magazines, emails, or other old-fashioned media, and they were 
+                        relatively easy to be recognized. Today, so many of us are bombarded with all kinds of information and it's getting
+                        harder to tell truth from lies. Furthermore, thanks to social media, fake news now can go viral and reach hundreds 
+                        of thousands of people within hours. From the election of 2016, conspiracy theories about vaccines and autism,
+                        to whether microwave causes cancer, we can see how fake news can impact our political views as well as attitudes
+                        toward everyday things.
                             </p>
                     <br />
                 </div>
@@ -31,7 +37,14 @@ class About extends Component {
                     </h5>
 
                     <p>
-                        Here we will provide you a couple useful tips. Remember to practice them in our quiz page!
+                        There are tons of articles online talking about how to identify fake news. 
+                        Here we will provide you a couple useful tips: 
+                        <ul>
+                            <li>
+                                <strong>Pay attention to the use of language</strong>
+                            </li>
+                        </ul>
+                        Remember to practice them in our quiz page!
                     </p>
                     <br />
                 </div>
@@ -42,7 +55,7 @@ class About extends Component {
                     </h5>
 
                     <p>
-                        We want to stop fake news!
+                        We want to stop fake news! 
                 </p>
                 </div>
                 {/* <Hint /> */}
