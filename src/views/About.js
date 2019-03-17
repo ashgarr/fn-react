@@ -13,7 +13,7 @@ class About extends Component {
                         <footer className="blockquote-footer">Voltaire in <cite title="Source Title">Letter to Charles-Augustin Ferriol, August 28, 1760</cite></footer>
                     </blockquote>
                 </Jumbotron>
-                <div className="ml-5 text-left">
+                <div className="ml-5 mr-5 text-left">
                     <br />
                     <h5>
                         <u>What Are Fake News?</u>
@@ -82,7 +82,9 @@ class About extends Component {
                     </h5>
 
                     <p>
-                        We want to stop fake news!
+                        We are a group of students learning front-end development skills. We want to contribute to
+                        the movement of stopping fake news and hope this project can help people become more aware of fake news, 
+                        resulting in greater misinformation detetion skills.
                 </p>
                 </div>
 

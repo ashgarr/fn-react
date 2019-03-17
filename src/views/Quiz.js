@@ -19,6 +19,9 @@ import Hint5 from '../components/Hint5';
 import Hint6 from '../components/Hint6';
 import Hint7 from '../components/Hint7';
 import Hint8 from '../components/Hint8';
+import html2canvas from 'html2canvas';
+//import jsPDF from 'jspdf';
+const jsPDF = require('jspdf')
 
 let answerArray = [null, null, null, null, null, null, null, null];
 let resultArray = [null, null, null, null, null, null, null, null];
@@ -42,7 +45,7 @@ function grade() {
 class ResultCard extends Component {
     render() {
         return (
-            <div>
+            <div id="capture">
                 <div className="card text-left shadow animated bounceInRight">
                     <div className="card-body">
                         <h5 className="card-title">Your Quiz Result</h5>
@@ -241,6 +244,28 @@ class Quiz extends Component {
         };
     }
 
+    IntoPDF() {
+        html2canvas(document.querySelector("#capture")).then(canvas => {
+            document.body.appendChild(canvas)
+        });
+
+        const input = document.getElementById('divIdToPrint');
+        html2canvas(input)
+            .then((canvas) => {
+                const imgData = canvas.toDataURL('image/png');
+            })
+            ;
+
+        html2canvas(input)
+            .then((canvas) => {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF();
+                pdf.addImage(imgData, 'PNG', 0, 0);
+                pdf.save("download.pdf");
+            });
+        ;
+    }
+
     ShowButton() {
         if (this.state.progress == numOfQuestions + 1) {
             return (
@@ -252,13 +277,11 @@ class Quiz extends Component {
                         }}
                     >Share this!
                     </Button>
-                    {/* <Button
+                    <Button
                         className="btn-lg btn-info mr-5"
-                        onClick={() => {
-
-                        }}
+                        onClick={() => this.IntoPDF()}
                     >Download
-                    </Button> */}
+                    </Button>
                 </div>
             );
         } else {
