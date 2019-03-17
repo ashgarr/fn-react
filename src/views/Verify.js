@@ -92,7 +92,7 @@ class Verify extends Component {
     }
 
     alertStruct = (count, site, author, title, content, type) => {
-        if (count !== 0) { // changing this.count to count fixes this line; need to double check why
+        if (count !== 0) {
             this.message = 'Flags have been raised on the '
             
             if (site) {
