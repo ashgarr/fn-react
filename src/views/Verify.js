@@ -12,6 +12,7 @@ class Verify extends Component {
             alert: false,
             blockButton: false,
             alertText: '',
+            danger: false,
             link: '',
             author: '',
             title: '',
@@ -71,7 +72,6 @@ class Verify extends Component {
 
         if (this.state.link === "yeet.com") {
             site = true;
-            alert("yeet")
             count++;
         }
 
@@ -114,8 +114,10 @@ class Verify extends Component {
             }
 
             this.message = this.message + '. Use caution with this article.'
+            this.setState({danger: true});
         } else {
             this.message = 'This article doesn\'t appear in our system, and should be safe to use.<br />Be sure to always use caution with suspicious articles.'
+            this.setState({danger: false});
         }
 
         return this.message;
@@ -148,7 +150,7 @@ class Verify extends Component {
     render() {
         return (
             <div className="form-widey">
-                { this.state.alert && <Alert alertText={this.state.alertText}/> }
+                { this.state.alert && <Alert alertText={this.state.alertText} danger={this.state.danger}/> }
                 <div className="mt-4" id="verify-form">
                     <em>REQUIRED, </em>Link to the article:<br />
                     <input type="text" id="link" className="form-control" name="link" value={this.state.link} onChange={this.handleLinkEdit}/>
