@@ -62,6 +62,26 @@ class Verify extends Component {
         return this.alertStruct(count, site, author, title, content, type);
     }
 
+    // from https://stackoverflow.com/questions/8498592/extract-hostname-name-from-string
+    extractHostname = (url) => {
+        var hostname;
+        //find & remove protocol (http, ftp, etc.) and get hostname
+    
+        if (url.indexOf("//") > -1) {
+            hostname = url.split('/')[2];
+        }
+        else {
+            hostname = url.split('/')[0];
+        }
+    
+        //find & remove port number
+        hostname = hostname.split(':')[0];
+        //find & remove "?"
+        hostname = hostname.split('?')[0];
+    
+        return hostname;
+    }
+
     noCsvSearcher = () => {
         var count = 0;
         var site = false;
@@ -70,7 +90,10 @@ class Verify extends Component {
         var content = false;
         var type = 0 // 0: none 1: bias 2: lie
 
-        if (this.state.link === "yeet.com") {
+        let psl = require('psl');
+        var url = psl.get(this.extractHostname(this.state.link))
+
+        if (url === "yeet.com") {
             site = true;
             count++;
         }
@@ -95,22 +118,34 @@ class Verify extends Component {
 
     alertStruct = (count, site, author, title, content, type) => {
         if (count !== 0) {
-            this.message = 'Flags have been raised on the '
+            this.message = 'Flags have been raised on this '
             
             if (site) {
-                this.message = this.message + ', site'
+                this.message = this.message + 'site'
+            }
+
+            if (author || title || content) {
+                this.message = this.message + "/"
             }
 
             if (author) {
-                this.message = this.message + ', author'
+                this.message = this.message + 'author'
+            }
+
+            if (title || content) {
+                this.message = this.message + "/"
             }
 
             if (title) {
-                this.message = this.message + ', title'
+                this.message = this.message + 'title'
             }
 
             if (content) {
-                this.message = this.message + ', content'
+                this.message = this.message + "/"
+            }
+
+            if (content) {
+                this.message = this.message + 'content'
             }
 
             this.message = this.message + '. Use caution with this article.'
