@@ -3,8 +3,14 @@ import React, { Component } from 'react';
 class Alert extends Component {
 
     render() {
+        let classes= "mt-4 alert"
+        if (this.props.danger) {
+            classes += " alert-danger"
+        } else {
+            classes += " alert-info"
+        }
         return (
-            <div id="red-alert">
+            <div className={classes}>
                 {this.props.alertText}
             </div>
         )

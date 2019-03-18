@@ -44,13 +44,13 @@ class About extends Component {
                                 <strong>Pay attention to the use of language. </strong>
                                 Exaggeration does not necessarily mean
                                 distortion, but we should be aware and cautious of the biases and emotions raised by the author's
-                                intended use of language. This is also the most convenient way to become suspicious toward certain
+                                intended use of language. This is also the most convenient way to become suspicious of certain
                                 information.
                             </li>
                             <li>
                                 <strong>Consider the source. </strong>
                                 When you see sources that are commonly considered credible like BBC or CNN, you are very likely
-                                looking at a trustworthy piece of news. Otherwise, Google the sources as long as you can't recognized
+                                looking at a trustworthy piece of news. Otherwise, Google the sources as long as you can't recognize
                                 them.
                             </li>
                             <li>
@@ -84,7 +84,7 @@ class About extends Component {
                     <p>
                         We are a group of students learning front-end development skills. We want to contribute to
                         the movement of stopping fake news and hope this project can help people become more aware of fake news, 
-                        resulting in greater misinformation detetion skills.
+                        resulting in greater misinformation detection skills.
                 </p>
                 </div>
 
