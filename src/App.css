@@ -67,3 +67,8 @@
         padding-right: 5%;
     }
 }
+
+.jumbo {
+    background-image: url('asset/paper.jpg');
+    color: white;
+}
