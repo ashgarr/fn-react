@@ -19,6 +19,7 @@ import Hint5 from '../components/Hint5';
 import Hint6 from '../components/Hint6';
 import Hint7 from '../components/Hint7';
 import Hint8 from '../components/Hint8';
+import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
 
 let answerArray = [null, null, null, null, null, null, null, null];
 let resultArray = [null, null, null, null, null, null, null, null];
@@ -43,7 +44,7 @@ class ResultCard extends Component {
     render() {
         return (
             <div>
-                <div className="card text-left shadow animated bounceInRight">
+                <div className="card text-left shadow">
                     <div className="card-body">
                         <h5 className="card-title">Your Quiz Result</h5>
                         <h6 className="card-subtitle font-weight-normal text-muted">
@@ -57,7 +58,7 @@ class ResultCard extends Component {
                                 <span> &#9989;</span> :
 
                                 <>
-                                    <span> &#10062;</span>
+                                    <span> &#10060;</span>
                                     <br />
                                     <strong>Key for solving this:</strong> The language used is extremely exaggerated. Pay attention to words like
                                     "suffer," "incredible," "tragically," etc. Without statistics or poll, the author can't justify the use of those words.
@@ -72,7 +73,7 @@ class ResultCard extends Component {
                                 which is {resultArray[1] ?
                                 <span> &#9989;</span> :
                                 <>
-                                    <span> &#10062;</span>
+                                    <span> &#10060;</span>
                                     <br />
                                     <strong>Key for solving this:</strong> The reasoning process contains many logical fallacies and none of the claims
                                     are supported by credible sources. Try to read carefully sentence by sentence to see how this vulnerable argument is built up.
@@ -87,7 +88,7 @@ class ResultCard extends Component {
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[2] ?
                                 <span> &#9989;</span> :
-                                <span> &#10062;</span>}
+                                <span> &#10060;</span>}
 
                             <br /><br />
                             For Q4, you picked {answerArray[3] == "FAKE" ?
@@ -95,12 +96,12 @@ class ResultCard extends Component {
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[3] ?
                                 <span> &#9989;</span> :
-                                <><span> &#10062;</span>
+                                <><span> &#10060;</span>
                                     <br />
                                     <strong>Key for solving this:</strong> After googling the author, you will realize that the author of this
                                     article is notoriously known for creating and spreading fake news.
                                 <br />
-                                    <a href="https://www.factcheck.org/2016/02/debunking-obamas-dubai-domicile/">
+                                    <a rel="noopener noreferrer" target="_blank" href="https://www.factcheck.org/2016/02/debunking-obamas-dubai-domicile/">
                                         More about this piece of news
                                 </a>
                                     <br />
@@ -113,7 +114,7 @@ class ResultCard extends Component {
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[4] ?
                                 <span> &#9989;</span> :
-                                <span> &#10062;</span>}
+                                <span> &#10060;</span>}
                             <br /><br />
 
                             For Q6, you picked {answerArray[5] == "FAKE" ?
@@ -122,12 +123,12 @@ class ResultCard extends Component {
                                 which is {resultArray[5] ?
                                 <span> &#9989;</span> :
                                 <>
-                                    <span> &#10062;</span>
+                                    <span> &#10060;</span>
                                     <br />
                                     <strong>Key for solving this:</strong> Check the date! Ford did shift its truck production from Mexico to Ohio,
                                 but it's decided <strong>a year</strong> before Trump won the election. So the correlation implied in the title did not stand.
                                <br />
-                                    <a href="https://www.snopes.com/fact-check/ford-from-mexico-to-ohio/">
+                                    <a rel="noopener noreferrer" target="_blank" href="https://www.snopes.com/fact-check/ford-from-mexico-to-ohio/">
                                         More about this piece of news
                                 </a>
                                     <br />
@@ -140,7 +141,7 @@ class ResultCard extends Component {
                                 <span className='text-primary'><strong> REAL</strong></span>},
                                 which is {resultArray[6] ?
                                 <span> &#9989;</span> :
-                                <span> &#10062;</span>}
+                                <span> &#10060;</span>}
                             <br /><br />
 
                             For Q8, you picked {answerArray[7] == "FAKE" ?
@@ -149,13 +150,13 @@ class ResultCard extends Component {
                                 which is {resultArray[7] ?
                                 <span> &#9989;</span> :
                                 <>
-                                    <span> &#10062;</span>
+                                    <span> &#10060;</span>
                                     <br />
                                     <strong>Key for solving this:</strong> Google the announcement! FDA has never made such announcement.
                                     Also pay attention to the exaggerated use of language and obvious conspiracy theories like "The
                                     FDA have removed the pamphlet/article."
                                     <br />
-                                    <a href="https://www.factcheck.org/2017/11/debunking-false-vaccine-claim/">
+                                    <a rel="noopener noreferrer" target="_blank" href="https://www.factcheck.org/2017/11/debunking-false-vaccine-claim/">
                                         More about this piece of news</a>
                                     <br />
                                 </>}
@@ -170,6 +171,8 @@ class ResultCard extends Component {
         )
     }
 }
+
+
 
 function ShowCard(props) {
     if (props.number == "1") {
@@ -197,7 +200,7 @@ function ShowCard(props) {
         return <QuizCard8 />;
     }
     if (props.number == numOfQuestions + 1) {
-        return <ResultCard />;
+        return <></>;
     }
 }
 
@@ -241,25 +244,45 @@ class Quiz extends Component {
         };
     }
 
+    exportPDF = () => {
+        this.resume.save();
+    }
+
     ShowButton() {
         if (this.state.progress == numOfQuestions + 1) {
             return (
-                <div className="card-body align-self-center">
-                    <Button
-                        className="btn-lg btn-info mr-5"
-                        onClick={() => {
+                <>
+                    <PDFExport paperSize={'Letter'}
+                        fileName="download.pdf"
+                        title=""
+                        subject=""
+                        keywords=""
+                        ref={(r) => this.resume = r}>
+                        <div style={{
+                            overflowX: 'hidden',
+                            overflowY: 'hidden'
+                        }}>
+                            <ResultCard />
 
-                        }}
-                    >Share this!
+
+                        </div>
+                    </PDFExport>
+
+                    <div className="card-body align-self-center">
+                        <Button
+                            className="btn-lg btn-info mr-5"
+                            onClick={() => {
+
+                            }}
+                        >Share this!
                     </Button>
-                    {/* <Button
-                        className="btn-lg btn-info mr-5"
-                        onClick={() => {
-
-                        }}
-                    >Download
-                    </Button> */}
-                </div>
+                        <Button
+                            className="btn-lg btn-info mr-5"
+                            onClick={() => this.exportPDF()}
+                        >Download
+                    </Button>
+                    </div>
+                </>
             );
         } else {
             return (

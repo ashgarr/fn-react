@@ -19,7 +19,7 @@ class VerticallyCenteredModal extends Component {
           <Modal.Body>
             <p>
               Welcome to the Fake News Identification Challenge! <br />
-              You'll be given <strong>10</strong> pieces of news.
+              You'll be given <strong>8</strong> pieces of news.
               Following your intention, claim each of them to be 
               <span className='text-primary'><strong> REAL </strong></span>
               or <span className='text-danger'><strong> FAKE</strong></span>. <br />

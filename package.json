@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.2",
+    "@progress/kendo-drawing": "^1.5.9",
+    "@progress/kendo-react-pdf": "^2.7.1",
+    "@react-pdf/renderer": "^1.4.1",
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
     "react": "^16.8.3",
