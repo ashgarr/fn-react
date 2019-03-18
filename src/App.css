@@ -51,3 +51,19 @@
     background-attachment: scroll;
     background-size: cover;
 } */
+
+@media (min-width: 1126px) {
+    .form-widey {
+        --wideboi: 50%; /* don't change this */
+        width: var(--wideboi);
+        left: var(--wideboi);
+        transform: translateX(var(--wideboi));
+    }
+}
+
+@media (max-width: 1125px) {
+    .form-widey {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}

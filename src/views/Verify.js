@@ -19,6 +19,7 @@ class Verify extends Component {
         }
     }
 
+    // In all cases, a link is required.
     alertSwap = (message) => {
         if (this.message !== '') {
             this.setState({alertText: message});
@@ -70,6 +71,7 @@ class Verify extends Component {
 
         if (this.state.link === "yeet.com") {
             site = true;
+            alert("yeet")
             count++;
         }
 
@@ -145,20 +147,20 @@ class Verify extends Component {
 
     render() {
         return (
-            <div>
+            <div className="form-widey">
                 { this.state.alert && <Alert alertText={this.state.alertText}/> }
-                <div className="mt-4">
-                    Link to the article:<br />
-                    <input type="text" id="link" name="link" value={this.state.link} onChange={this.handleLinkEdit}/>
+                <div className="mt-4" id="verify-form">
+                    <em>REQUIRED, </em>Link to the article:<br />
+                    <input type="text" id="link" className="form-control" name="link" value={this.state.link} onChange={this.handleLinkEdit}/>
                     <br />
                     Author of the article:<br />
-                    <input type="text" name="author" value={this.state.author} onChange={this.handleAuthorEdit} />
+                    <input type="text" className="form-control" name="author" value={this.state.author} onChange={this.handleAuthorEdit} />
                     <br />
                     Title of the article:<br />
-                    <input type="text" name="title" value={this.state.title} onChange={this.handleTitleEdit} />
+                    <input type="text" className="form-control" name="title" value={this.state.title} onChange={this.handleTitleEdit} />
                     <br />
                     Text of the article:<br />
-                    <input type="text" name="content" value={this.state.content} onChange={this.handleContentEdit} />
+                    <textarea rows="5" className="form-control" name="content" value={this.state.content} onChange={this.handleContentEdit} />
                     <br />
                     <button className="mt-4 btn btn-warning" onClick={this.go} disabled={this.state.blockButton}>Verify!</button>
                 </div>
